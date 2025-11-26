@@ -180,7 +180,7 @@ export function Footer() {
             />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="http://fsa-am.uiz.ac.ma/storage/media/stand_fr_dark.png"
+              src="/images/logofsaam.png"
               alt="FSA Ait Melloul"
               className="h-12 md:h-14 w-auto object-contain dark:brightness-0 dark:invert opacity-70 hover:opacity-100 transition-opacity"
             />

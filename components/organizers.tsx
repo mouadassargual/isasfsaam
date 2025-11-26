@@ -46,7 +46,7 @@ const sponsors = [
     name: "Faculte des Sciences Appliquees Ait Melloul",
     initials: "FSA",
     tier: "platinum",
-    logo: "http://fsa-am.uiz.ac.ma/storage/media/stand_fr_dark.png",
+    logo: "/images/logofsaam.png",
   },
 ]
 
