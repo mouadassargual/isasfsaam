@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://isas2025.vercel.app/sitemap.xml
