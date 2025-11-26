@@ -8,7 +8,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'vectorseek.com',
+        hostname: 'www.emploi-public.ma',
       },
       {
         protocol: 'http',

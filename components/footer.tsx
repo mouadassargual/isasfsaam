@@ -174,7 +174,7 @@ export function Footer() {
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://vectorseek.com/wp-content/uploads/2023/09/UIZ-IBN-ZOHR-Logo-Vector.svg--300x107.png"
+              src="https://www.emploi-public.ma/backoffice/files/images/administrations/logo-385.png"
               alt="Université Ibn Zohr"
               className="h-12 md:h-14 w-auto object-contain dark:brightness-0 dark:invert opacity-70 hover:opacity-100 transition-opacity"
             />

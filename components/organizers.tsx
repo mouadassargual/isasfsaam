@@ -40,7 +40,7 @@ const sponsors = [
     name: "Universite Ibn Zohr",
     initials: "UIZ",
     tier: "platinum",
-    logo: "https://vectorseek.com/wp-content/uploads/2023/09/UIZ-IBN-ZOHR-Logo-Vector.svg--300x107.png",
+    logo: "https://www.emploi-public.ma/backoffice/files/images/administrations/logo-385.png",
   },
   {
     name: "Faculte des Sciences Appliquees Ait Melloul",
