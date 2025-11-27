@@ -4,17 +4,25 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { useLanguage } from "@/lib/i18n/context"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { ThemeSwitcher } from "@/components/theme-switcher"
 import { GOOGLE_FORM_URL } from "@/lib/constants"
+import { useTheme } from "next-themes"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
   const { t } = useLanguage()
+  const { resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const navItems = [
     { label: t.nav.home, href: "#home" },
@@ -72,17 +80,17 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="#home" className="flex items-center gap-3 group">
-            <div className="relative">
-              <div className="w-11 h-11 rounded-xl gradient-animated flex items-center justify-center shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-all group-hover:scale-105">
-                <span className="text-lg font-bold text-white">IS</span>
-              </div>
-              <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-cyan rounded-md flex items-center justify-center">
-                <span className="text-[8px] font-bold text-white">AS</span>
-              </div>
-            </div>
-            <div className="hidden sm:flex flex-col">
-              <span className="font-bold text-lg text-foreground leading-none tracking-tight">ISAS</span>
-              <span className="text-[10px] bg-gradient-to-r from-primary to-cyan bg-clip-text text-transparent font-semibold tracking-wider">AUTUMN SCHOOL 2025</span>
+            <div className="relative h-12 w-auto">
+              {mounted && (
+                <Image
+                  src={resolvedTheme === "dark" ? "/logo white.png" : "/logo black.png"}
+                  alt="ISAS Logo"
+                  width={180}
+                  height={48}
+                  className="h-12 w-auto object-contain group-hover:scale-105 transition-transform"
+                  priority
+                />
+              )}
             </div>
           </Link>
 

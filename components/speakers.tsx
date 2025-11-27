@@ -12,6 +12,51 @@ import { cn } from "@/lib/utils"
 
 const speakers = [
   {
+    id: "amine-saddik",
+    name: "Amine Saddik",
+    roleEn: "Robotic Precision Agriculture",
+    roleFr: "Agriculture de Précision Robotisée",
+    organization: "Robotics Expert",
+    bioEn: "Robotics specialist focused on agricultural automation, drones, and precision farming technologies.",
+    bioFr: "Spécialiste en robotique agricole, drones et technologies d'agriculture de précision.",
+    expertise: ["Robotics", "Drones", "Agriculture"],
+    image: "/speakrs/amine.png",
+    gradient: "from-amber-500 to-orange-600",
+    day: 4,
+    time: "10:00 - 11:00",
+    confirmed: true,
+  },
+  {
+    id: "anas-bennis",
+    name: "Anas Bennis",
+    roleEn: "Data-Driven Agriculture",
+    roleFr: "Agriculture Data-Driven",
+    organization: "ENA Meknès",
+    bioEn: "Professor at ENA Meknès specializing in data science applications for agricultural optimization.",
+    bioFr: "Professeur à l'ENA Meknès spécialisé dans les applications de data science pour l'agriculture.",
+    expertise: ["Data Science", "Agriculture", "AI"],
+    image: "/speakrs/bennis.jpeg",
+    gradient: "from-green-500 to-emerald-600",
+    day: 5,
+    time: "10:00 - 11:00",
+    confirmed: true,
+  },
+  {
+    id: "ismail-khoubbaz",
+    name: "Ismail Khoubbaz",
+    roleEn: "BIM & Virtual Reality",
+    roleFr: "BIM & Réalité Virtuelle",
+    organization: "BIM-R",
+    bioEn: "Pioneer in Building Information Modeling and VR applications for construction and architecture.",
+    bioFr: "Pionnier du BIM et des applications VR pour la construction et l'architecture.",
+    expertise: ["BIM", "VR/AR", "Digital Twins"],
+    image: "/speakrs/Ismail-Khoubbaz.jpeg",
+    gradient: "from-emerald-500 to-teal-600",
+    day: 3,
+    time: "11:15 - 12:45",
+    confirmed: true,
+  },
+  {
     id: "ismail-saddik",
     name: "Ismail Saddik",
     roleEn: "Building a Project from Scratch",
@@ -42,52 +87,6 @@ const speakers = [
     confirmed: true,
   },
   {
-    id: "zakaria-elkhadiri",
-    name: "Zakaria El Khadiri",
-    roleEn: "Engineering ADAS: Vehicle Autonomy",
-    roleFr: "Ingénierie ADAS: Autonomie Véhicule",
-    organization: "Automotive Expert",
-    bioEn: "Automotive engineer with expertise in Advanced Driver Assistance Systems and autonomous vehicle technologies.",
-    bioFr: "Ingénieur automobile expert en systèmes ADAS et technologies de véhicules autonomes.",
-    expertise: ["ADAS", "Autonomous Vehicles", "AI"],
-    image: null,
-    initials: "ZK",
-    gradient: "from-violet-500 to-purple-600",
-    day: 3,
-    time: "10:00 - 11:00",
-    confirmed: true,
-  },
-  {
-    id: "ismail-khoubbaz",
-    name: "Ismail Khoubbaz",
-    roleEn: "BIM & Virtual Reality",
-    roleFr: "BIM & Réalité Virtuelle",
-    organization: "BIM-R",
-    bioEn: "Pioneer in Building Information Modeling and VR applications for construction and architecture.",
-    bioFr: "Pionnier du BIM et des applications VR pour la construction et l'architecture.",
-    expertise: ["BIM", "VR/AR", "Digital Twins"],
-    image: "/speakrs/Ismail-Khoubbaz.jpeg",
-    gradient: "from-emerald-500 to-teal-600",
-    day: 3,
-    time: "11:15 - 12:45",
-    confirmed: true,
-  },
-  {
-    id: "amine-saddik",
-    name: "Amine Saddik",
-    roleEn: "Robotic Precision Agriculture",
-    roleFr: "Agriculture de Précision Robotisée",
-    organization: "Robotics Expert",
-    bioEn: "Robotics specialist focused on agricultural automation, drones, and precision farming technologies.",
-    bioFr: "Spécialiste en robotique agricole, drones et technologies d'agriculture de précision.",
-    expertise: ["Robotics", "Drones", "Agriculture"],
-    image: "/speakrs/amine.png",
-    gradient: "from-amber-500 to-orange-600",
-    day: 4,
-    time: "10:00 - 11:00",
-    confirmed: true,
-  },
-  {
     id: "nabil-ayoub",
     name: "Nabil Ayoub",
     roleEn: "Open-Source Data Pipeline",
@@ -103,17 +102,18 @@ const speakers = [
     confirmed: true,
   },
   {
-    id: "anas-bennis",
-    name: "Anas Bennis",
-    roleEn: "Data-Driven Agriculture",
-    roleFr: "Agriculture Data-Driven",
-    organization: "ENA Meknès",
-    bioEn: "Professor at ENA Meknès specializing in data science applications for agricultural optimization.",
-    bioFr: "Professeur à l'ENA Meknès spécialisé dans les applications de data science pour l'agriculture.",
-    expertise: ["Data Science", "Agriculture", "AI"],
-    image: "/speakrs/bennis.jpeg",
-    gradient: "from-green-500 to-emerald-600",
-    day: 5,
+    id: "zakaria-elkhadiri",
+    name: "Zakaria El Khadiri",
+    roleEn: "Engineering ADAS: Vehicle Autonomy",
+    roleFr: "Ingénierie ADAS: Autonomie Véhicule",
+    organization: "Automotive Expert",
+    bioEn: "Automotive engineer with expertise in Advanced Driver Assistance Systems and autonomous vehicle technologies.",
+    bioFr: "Ingénieur automobile expert en systèmes ADAS et technologies de véhicules autonomes.",
+    expertise: ["ADAS", "Autonomous Vehicles", "AI"],
+    image: null,
+    initials: "ZK",
+    gradient: "from-violet-500 to-purple-600",
+    day: 3,
     time: "10:00 - 11:00",
     confirmed: true,
   },
@@ -200,7 +200,7 @@ function SpeakerCard({ speaker, index, isExpanded, onToggle }: {
           <div className="flex items-start gap-5 mb-5">
             {/* Photo */}
             <div className={cn(
-              "relative shrink-0 w-20 h-20 rounded-2xl p-0.5 shadow-lg",
+              "relative shrink-0 w-24 h-24 rounded-2xl p-0.5 shadow-lg",
               `bg-gradient-to-br ${speaker.gradient}`
             )}>
               <div className="w-full h-full rounded-2xl overflow-hidden bg-background flex items-center justify-center">
@@ -208,12 +208,12 @@ function SpeakerCard({ speaker, index, isExpanded, onToggle }: {
                   <Image
                     src={speaker.image}
                     alt={speaker.name}
-                    width={80}
-                    height={80}
+                    width={96}
+                    height={96}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 ) : (
-                  <span className="text-xl font-black text-primary">
+                  <span className="text-2xl font-black text-primary">
                     {speaker.initials}
                   </span>
                 )}
