@@ -6,8 +6,28 @@ import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
-import { CalendarDays, Clock, MapPin, ChevronRight, Coffee, Utensils } from "lucide-react"
+import { CalendarDays, Clock, MapPin, ChevronRight, Coffee, Utensils, User, Filter, X } from "lucide-react"
 import { useLanguage } from "@/lib/i18n/context"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+
+// Speaker data for linking schedule to speakers section
+const speakerImages: Record<string, { image: string | null; initials?: string }> = {
+  "Ismail Saddik": { image: "/speakrs/ismail.png" },
+  "Mohamed El Habib Abaakil": { image: "/speakrs/Mohamed-El-Habib-Abaakil.jpeg" },
+  "Zakaria El Khadiri": { image: null, initials: "ZK" },
+  "Ismail Khoubbaz": { image: "/speakrs/Ismail-Khoubbaz.jpeg" },
+  "Amine Saddik": { image: "/speakrs/amine.png" },
+  "Nabil Ayoub": { image: "/speakrs/nabil.png" },
+  "Anas Bennis": { image: "/speakrs/bennis.jpeg" },
+  "Zakaria Oulad": { image: "/speakrs/zakaria-oulad.png" },
+}
+
+const getSpeakerInfo = (speakerName: string) => {
+  // Extract clean name without organization
+  const cleanName = speakerName.split(" (")[0].trim()
+  return speakerImages[cleanName] || null
+}
 
 const scheduleData = [
   {
@@ -256,7 +276,21 @@ const typeConfig: Record<string, { bg: string; text: string; icon?: React.ReactN
 
 export function Schedule() {
   const [activeDay, setActiveDay] = useState(0)
+  const [activeFilter, setActiveFilter] = useState<string | null>(null)
   const { t, language } = useLanguage()
+
+  const scrollToSpeaker = (speakerName: string) => {
+    const speakersSection = document.getElementById('speakers')
+    if (speakersSection) {
+      speakersSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
+  const eventTypes = ['keynote', 'workshop', 'conference', 'hackathon']
+
+  const filteredEvents = activeFilter 
+    ? scheduleData[activeDay].events.filter(e => e.type === activeFilter)
+    : scheduleData[activeDay].events
 
   const getTypeLabel = (type: string) => {
     const labels: Record<string, string> = {
@@ -318,7 +352,7 @@ export function Schedule() {
         {/* Active day content */}
         <div className="max-w-4xl mx-auto">
           {/* Day header */}
-          <div className="flex items-center gap-4 mb-8 p-4 rounded-xl bg-card border border-border">
+          <div className="flex items-center gap-4 mb-6 p-4 rounded-xl bg-card border border-border">
             <div className={cn("w-2 h-12 rounded-full", scheduleData[activeDay].color)} />
             <div>
               <h3 className="text-2xl font-bold text-foreground">
@@ -330,9 +364,54 @@ export function Schedule() {
             </div>
           </div>
 
+          {/* Filter buttons */}
+          <div className="flex flex-wrap items-center gap-2 mb-6">
+            <div className="flex items-center gap-2 text-muted-foreground mr-2">
+              <Filter className="w-4 h-4" />
+              <span className="text-sm font-medium">{language === "en" ? "Filter:" : "Filtrer:"}</span>
+            </div>
+            <Button
+              variant={activeFilter === null ? "default" : "outline"}
+              size="sm"
+              onClick={() => setActiveFilter(null)}
+              className="h-8 text-xs"
+            >
+              {language === "en" ? "All" : "Tous"}
+            </Button>
+            {eventTypes.map(type => (
+              <Button
+                key={type}
+                variant={activeFilter === type ? "default" : "outline"}
+                size="sm"
+                onClick={() => setActiveFilter(activeFilter === type ? null : type)}
+                className={cn(
+                  "h-8 text-xs gap-1.5",
+                  activeFilter === type && typeConfig[type]?.bg
+                )}
+              >
+                {getTypeLabel(type)}
+              </Button>
+            ))}
+            {activeFilter && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setActiveFilter(null)}
+                className="h-8 text-xs text-muted-foreground hover:text-foreground"
+              >
+                <X className="w-3 h-3 mr-1" />
+                {language === "en" ? "Clear" : "Effacer"}
+              </Button>
+            )}
+          </div>
+
           {/* Events */}
           <div className="space-y-4">
-            {scheduleData[activeDay].events.map((event, index) => (
+            {filteredEvents.length === 0 ? (
+              <div className="text-center py-12 text-muted-foreground">
+                {language === "en" ? "No events match this filter for this day." : "Aucun événement ne correspond à ce filtre pour ce jour."}
+              </div>
+            ) : filteredEvents.map((event, index) => (
               <Card
                 key={index}
                 className={cn(
@@ -354,9 +433,46 @@ export function Schedule() {
                         <h4 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                           {language === "en" ? event.titleEn : event.titleFr}
                         </h4>
-                        <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                          <MapPin className="w-4 h-4" />
-                          <span>{event.location}</span>
+                        <div className="flex items-center gap-4 text-muted-foreground text-sm">
+                          <div className="flex items-center gap-2">
+                            <MapPin className="w-4 h-4" />
+                            <span>{event.location}</span>
+                          </div>
+                          {/* Speaker with photo */}
+                          {event.speaker && (
+                            <button
+                              onClick={() => scrollToSpeaker(event.speaker!)}
+                              className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors group/speaker cursor-pointer"
+                            >
+                              {(() => {
+                                const speakerInfo = getSpeakerInfo(event.speaker)
+                                if (speakerInfo?.image) {
+                                  return (
+                                    <div className="w-6 h-6 rounded-full overflow-hidden ring-2 ring-primary/30 group-hover/speaker:ring-primary/50 transition-all">
+                                      <Image
+                                        src={speakerInfo.image}
+                                        alt={event.speaker}
+                                        width={24}
+                                        height={24}
+                                        className="w-full h-full object-cover"
+                                      />
+                                    </div>
+                                  )
+                                } else if (speakerInfo?.initials) {
+                                  return (
+                                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-cyan flex items-center justify-center ring-2 ring-primary/30">
+                                      <span className="text-[10px] font-bold text-white">{speakerInfo.initials}</span>
+                                    </div>
+                                  )
+                                } else {
+                                  return <User className="w-4 h-4 text-primary" />
+                                }
+                              })()}
+                              <span className="text-primary font-medium text-xs group-hover/speaker:underline">
+                                {event.speaker.split(" (")[0]}
+                              </span>
+                            </button>
+                          )}
                         </div>
                       </div>
                       <Badge
