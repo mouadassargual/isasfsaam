@@ -195,12 +195,12 @@ function SpeakerCard({ speaker, index, isExpanded, onToggle }: {
         )}
         onClick={onToggle}
       >
-        <CardContent className="p-5">
+        <CardContent className="p-6">
           {/* Header with photo and day badge */}
-          <div className="flex items-start gap-4 mb-4">
+          <div className="flex items-start gap-5 mb-5">
             {/* Photo */}
             <div className={cn(
-              "relative shrink-0 w-16 h-16 rounded-2xl p-0.5 shadow-lg",
+              "relative shrink-0 w-20 h-20 rounded-2xl p-0.5 shadow-lg",
               `bg-gradient-to-br ${speaker.gradient}`
             )}>
               <div className="w-full h-full rounded-2xl overflow-hidden bg-background flex items-center justify-center">
@@ -208,59 +208,59 @@ function SpeakerCard({ speaker, index, isExpanded, onToggle }: {
                   <Image
                     src={speaker.image}
                     alt={speaker.name}
-                    width={64}
-                    height={64}
+                    width={80}
+                    height={80}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 ) : (
-                  <span className="text-lg font-black text-primary">
+                  <span className="text-xl font-black text-primary">
                     {speaker.initials}
                   </span>
                 )}
               </div>
               {/* Online indicator */}
-              <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-emerald-500 border-2 border-background flex items-center justify-center">
-                <span className="text-[8px] text-white">✓</span>
+              <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-emerald-500 border-2 border-background flex items-center justify-center">
+                <span className="text-[9px] text-white">✓</span>
               </div>
             </div>
 
             {/* Name and role */}
             <div className="flex-1 min-w-0">
-              <h3 className="text-base font-bold text-foreground mb-0.5 truncate group-hover:text-primary transition-colors">
+              <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
                 {speaker.name}
               </h3>
               <p className={cn(
-                "text-sm font-medium mb-1 truncate",
+                "text-sm font-medium mb-1.5",
                 `bg-gradient-to-r ${speaker.gradient} bg-clip-text text-transparent`
               )}>
                 {language === "en" ? speaker.roleEn : speaker.roleFr}
               </p>
-              <p className="text-xs text-muted-foreground truncate">{speaker.organization}</p>
+              <p className="text-sm text-muted-foreground">{speaker.organization}</p>
             </div>
           </div>
 
           {/* Day and Time */}
-          <div className="flex items-center gap-2 mb-4">
+          <div className="flex items-center gap-3 mb-5">
             <Badge className={cn(
-              "text-[10px] border-0 text-white",
+              "text-xs border-0 text-white px-3 py-1",
               `bg-gradient-to-r ${speaker.gradient}`
             )}>
-              <Calendar className="w-3 h-3 mr-1" />
+              <Calendar className="w-3.5 h-3.5 mr-1.5" />
               {language === "en" ? `Day ${speaker.day}` : `Jour ${speaker.day}`}
             </Badge>
-            <span className="text-xs text-muted-foreground flex items-center gap-1">
-              <Clock className="w-3 h-3" />
+            <span className="text-sm text-muted-foreground flex items-center gap-1.5">
+              <Clock className="w-3.5 h-3.5" />
               {speaker.time}
             </span>
           </div>
 
           {/* Expertise tags */}
-          <div className="flex flex-wrap gap-1.5 mb-3">
+          <div className="flex flex-wrap gap-2 mb-4">
             {speaker.expertise.map((tag) => (
               <Badge
                 key={tag}
                 variant="outline"
-                className="bg-secondary/30 text-muted-foreground border-border/50 text-[10px] px-2 py-0.5 hover:border-primary/30 transition-colors"
+                className="bg-secondary/30 text-muted-foreground border-border/50 text-xs px-2.5 py-1 hover:border-primary/30 transition-colors"
               >
                 {tag}
               </Badge>
@@ -398,7 +398,7 @@ export function Speakers() {
 
           <div 
             ref={scrollRef}
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6"
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
           >
             {filteredSpeakers.map((speaker, index) => (
               <SpeakerCard
