@@ -10,43 +10,84 @@ import Image from "next/image"
 
 const speakers = [
   {
-    name: "Dr. Ahmed Benali",
-    roleEn: "AI & Deep Learning Expert",
-    roleFr: "Expert en IA & Deep Learning",
-    organization: "Ibn Zohr University",
-    expertise: ["AI", "Deep Learning", "Computer Vision"],
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    name: "Ismail Saddik",
+    roleEn: "Building a Project from Scratch",
+    roleFr: "Construire un projet de zéro",
+    organization: "Keynote Speaker",
+    expertise: ["Project Management", "Entrepreneurship"],
+    image: "/speakrs/ismail.png",
     gradient: "from-primary to-orange-500",
     confirmed: true,
   },
   {
-    name: "Prof. Fatima Zahra Alaoui",
-    roleEn: "IoT & Embedded Systems",
-    roleFr: "IoT & Systèmes Embarqués",
-    organization: "IMIS Research Lab",
-    expertise: ["IoT", "Embedded", "Sensors"],
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    name: "Mohamed El Habib Abaakil",
+    roleEn: "Industrial Smart Solutions",
+    roleFr: "Solutions Intelligentes Industrielles",
+    organization: "PPRIME Institute",
+    expertise: ["IoT", "Industry 4.0", "Smart Systems"],
+    image: "/speakrs/Mohamed-El-Habib-Abaakil.jpeg",
     gradient: "from-cyan to-blue-500",
     confirmed: true,
   },
   {
-    name: "Ing. Youssef Amrani",
-    roleEn: "BIM/VR Architect",
-    roleFr: "Architecte BIM/VR",
-    organization: "Tech Solutions Morocco",
-    expertise: ["BIM", "VR/AR", "3D Modeling"],
-    image: "https://randomuser.me/api/portraits/men/67.jpg",
+    name: "Zakaria El Khadiri",
+    roleEn: "Engineering ADAS: Vehicle Autonomy",
+    roleFr: "Ingénierie ADAS: Autonomie Véhicule",
+    organization: "Automotive Expert",
+    expertise: ["ADAS", "Autonomous Vehicles", "AI"],
+    image: null,
+    initials: "ZK",
     gradient: "from-violet-500 to-purple-600",
     confirmed: true,
   },
   {
-    name: "Dr. Samira Ouali",
-    roleEn: "Machine Learning Researcher",
-    roleFr: "Chercheuse en Machine Learning",
-    organization: "Data Horizon Club",
-    expertise: ["ML", "Data Science", "Python"],
-    image: "https://randomuser.me/api/portraits/women/68.jpg",
+    name: "Ismail Khoubbaz",
+    roleEn: "BIM & Virtual Reality",
+    roleFr: "BIM & Réalité Virtuelle",
+    organization: "BIM-R",
+    expertise: ["BIM", "VR/AR", "Digital Twins"],
+    image: "/speakrs/Ismail-Khoubbaz.jpeg",
     gradient: "from-emerald-500 to-teal-600",
+    confirmed: true,
+  },
+  {
+    name: "Amine Saddik",
+    roleEn: "Robotic Precision Agriculture",
+    roleFr: "Agriculture de Précision Robotisée",
+    organization: "Robotics Expert",
+    expertise: ["Robotics", "Drones", "Agriculture"],
+    image: "/speakrs/amine.png",
+    gradient: "from-amber-500 to-orange-600",
+    confirmed: true,
+  },
+  {
+    name: "Nabil Ayoub",
+    roleEn: "Open-Source Data Pipeline",
+    roleFr: "Pipeline de Données Open-Source",
+    organization: "AgriData",
+    expertise: ["Data Engineering", "Python", "Metabase"],
+    image: "/speakrs/nabil.png",
+    gradient: "from-blue-500 to-indigo-600",
+    confirmed: true,
+  },
+  {
+    name: "Anas Bennis",
+    roleEn: "Data-Driven Agriculture",
+    roleFr: "Agriculture Data-Driven",
+    organization: "ENA Meknès",
+    expertise: ["Data Science", "Agriculture", "AI"],
+    image: "/speakrs/bennis.jpeg",
+    gradient: "from-green-500 to-emerald-600",
+    confirmed: true,
+  },
+  {
+    name: "Zakaria Oulad",
+    roleEn: "Systems Integration Hackathon",
+    roleFr: "Hackathon Intégration Systèmes",
+    organization: "MOZA Partners",
+    expertise: ["Hackathon", "IoT", "Integration"],
+    image: "/speakrs/zakaria-oulad.png",
+    gradient: "from-rose-500 to-pink-600",
     confirmed: true,
   },
 ]
@@ -82,14 +123,18 @@ export function Speakers() {
                 {/* Photo with gradient border */}
                 <div className="relative mb-5">
                   <div className={`w-24 h-24 mx-auto rounded-2xl bg-gradient-to-br ${speaker.gradient} p-0.5 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    <div className="w-full h-full rounded-2xl overflow-hidden">
-                      <Image
-                        src={speaker.image}
-                        alt={speaker.name}
-                        width={96}
-                        height={96}
-                        className="w-full h-full object-cover"
-                      />
+                    <div className="w-full h-full rounded-2xl overflow-hidden bg-background flex items-center justify-center">
+                      {speaker.image ? (
+                        <Image
+                          src={speaker.image}
+                          alt={speaker.name}
+                          width={96}
+                          height={96}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <span className="text-2xl font-bold text-foreground">{speaker.initials}</span>
+                      )}
                     </div>
                   </div>
                   {/* Confirmed badge */}

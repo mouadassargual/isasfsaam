@@ -114,6 +114,7 @@ export const translations = {
       dayNames: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       types: {
         ceremony: "Ceremony",
+        keynote: "Keynote",
         conference: "Conference",
         workshop: "Workshop",
         networking: "Networking",
@@ -360,6 +361,7 @@ export const translations = {
       dayNames: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"],
       types: {
         ceremony: "Ceremonie",
+        keynote: "Keynote",
         conference: "Conference",
         workshop: "Atelier",
         networking: "Networking",
