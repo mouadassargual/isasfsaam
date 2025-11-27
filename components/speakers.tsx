@@ -194,34 +194,29 @@ function SpeakerCard({ speaker, index, isExpanded, onToggle }: {
         )}
         onClick={onToggle}
       >
-        {/* Animated gradient background on hover */}
+        {/* Subtle glow effect on hover */}
         <div className={cn(
-          "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br",
-          speaker.gradient,
-          "opacity-[0.05]"
-        )} />
-        
-        {/* Glow effect */}
-        <div className={cn(
-          "absolute -inset-px rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10",
+          "absolute -inset-1 rounded-xl transition-opacity duration-500 blur-xl -z-10 opacity-0 group-hover:opacity-30",
           `bg-gradient-to-br ${speaker.gradient}`
         )} />
 
         <CardContent className="p-0">
           {/* Top section with photo */}
           <div className="relative">
-            {/* Background pattern */}
+            {/* Background pattern - reduced height */}
             <div className={cn(
-              "h-24 bg-gradient-to-br relative overflow-hidden",
+              "h-20 bg-gradient-to-br relative overflow-hidden",
               speaker.gradient
             )}>
-              {/* Animated circles */}
-              <div className="absolute top-2 right-2 w-16 h-16 rounded-full bg-white/10 blur-xl animate-pulse" />
-              <div className="absolute bottom-0 left-1/4 w-12 h-12 rounded-full bg-white/5 blur-lg" />
+              {/* Subtle pattern */}
+              <div className="absolute inset-0 opacity-30">
+                <div className="absolute top-1 right-4 w-12 h-12 rounded-full bg-white/20 blur-lg" />
+                <div className="absolute bottom-1 left-8 w-8 h-8 rounded-full bg-white/10 blur-md" />
+              </div>
               
               {/* Day badge */}
-              <div className="absolute top-3 left-3">
-                <Badge className="bg-white/20 backdrop-blur-md text-white border-0 text-[10px] font-semibold">
+              <div className="absolute top-2 left-2">
+                <Badge className="bg-white/25 backdrop-blur-sm text-white border-0 text-[10px] font-medium shadow-sm">
                   <Calendar className="w-3 h-3 mr-1" />
                   {language === "en" ? `Day ${speaker.day}` : `Jour ${speaker.day}`}
                 </Badge>
@@ -229,26 +224,23 @@ function SpeakerCard({ speaker, index, isExpanded, onToggle }: {
             </div>
             
             {/* Photo overlapping */}
-            <div className="absolute -bottom-12 left-1/2 -translate-x-1/2">
+            <div className="absolute -bottom-10 left-1/2 -translate-x-1/2">
               <div className={cn(
-                "w-24 h-24 rounded-2xl p-0.5 shadow-xl transition-transform duration-300",
+                "w-20 h-20 rounded-xl p-0.5 shadow-lg transition-transform duration-300",
                 `bg-gradient-to-br ${speaker.gradient}`,
-                "group-hover:scale-110"
+                "group-hover:scale-105"
               )}>
-                <div className="w-full h-full rounded-2xl overflow-hidden bg-background flex items-center justify-center">
+                <div className="w-full h-full rounded-xl overflow-hidden bg-background flex items-center justify-center">
                   {speaker.image ? (
                     <Image
                       src={speaker.image}
                       alt={speaker.name}
-                      width={96}
-                      height={96}
+                      width={80}
+                      height={80}
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <span className={cn(
-                      "text-2xl font-black bg-gradient-to-br bg-clip-text text-transparent",
-                      speaker.gradient
-                    )}>
+                    <span className="text-xl font-black text-primary">
                       {speaker.initials}
                     </span>
                   )}
@@ -258,7 +250,7 @@ function SpeakerCard({ speaker, index, isExpanded, onToggle }: {
               {/* Confirmed badge */}
               {speaker.confirmed && (
                 <div className="absolute -bottom-1 left-1/2 -translate-x-1/2">
-                  <Badge className="bg-emerald-500 text-white border-0 text-[10px] shadow-lg px-2">
+                  <Badge className="bg-emerald-500 text-white border-0 text-[9px] shadow-md px-1.5 py-0.5">
                     ✓ {language === "en" ? "Confirmed" : "Confirmé"}
                   </Badge>
                 </div>
@@ -267,31 +259,28 @@ function SpeakerCard({ speaker, index, isExpanded, onToggle }: {
           </div>
 
           {/* Info section */}
-          <div className="pt-16 pb-5 px-5 text-center">
+          <div className="pt-14 pb-4 px-4 text-center">
             <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
               {speaker.name}
             </h3>
-            <p className={cn(
-              "text-sm font-semibold mb-1 bg-gradient-to-r bg-clip-text text-transparent",
-              speaker.gradient
-            )}>
+            <p className="text-sm font-semibold mb-1 text-primary">
               {language === "en" ? speaker.roleEn : speaker.roleFr}
             </p>
             <p className="text-muted-foreground text-xs mb-3">{speaker.organization}</p>
             
             {/* Time info */}
-            <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground mb-4">
+            <div className="flex items-center justify-center gap-1.5 text-[11px] text-muted-foreground mb-3">
               <Clock className="w-3 h-3" />
               <span>{dayNames[speaker.day]} • {speaker.time}</span>
             </div>
 
             {/* Expertise tags */}
-            <div className="flex flex-wrap justify-center gap-1.5">
+            <div className="flex flex-wrap justify-center gap-1">
               {speaker.expertise.slice(0, 3).map((tag) => (
                 <Badge
                   key={tag}
                   variant="outline"
-                  className="bg-secondary/50 text-muted-foreground border-border text-[10px] px-2 py-0.5 hover:border-primary/30 transition-colors"
+                  className="bg-secondary/50 text-muted-foreground border-border/50 text-[9px] px-1.5 py-0.5"
                 >
                   {tag}
                 </Badge>
@@ -301,20 +290,20 @@ function SpeakerCard({ speaker, index, isExpanded, onToggle }: {
             {/* Expanded content */}
             <div className={cn(
               "overflow-hidden transition-all duration-500",
-              isExpanded ? "max-h-40 opacity-100 mt-4" : "max-h-0 opacity-0"
+              isExpanded ? "max-h-32 opacity-100 mt-3" : "max-h-0 opacity-0"
             )}>
-              <div className="pt-4 border-t border-border/50">
-                <p className="text-sm text-muted-foreground leading-relaxed">
+              <div className="pt-3 border-t border-border/50">
+                <p className="text-xs text-muted-foreground leading-relaxed">
                   {language === "en" ? speaker.bioEn : speaker.bioFr}
                 </p>
               </div>
             </div>
 
             {/* Expand indicator */}
-            <div className="mt-3 flex justify-center">
+            <div className="mt-2 flex justify-center">
               <div className={cn(
-                "w-8 h-1 rounded-full bg-border transition-all duration-300",
-                "group-hover:bg-primary/50 group-hover:w-12"
+                "w-6 h-0.5 rounded-full bg-border/50 transition-all duration-300",
+                "group-hover:bg-primary/40 group-hover:w-10"
               )} />
             </div>
           </div>
