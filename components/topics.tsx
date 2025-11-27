@@ -82,7 +82,6 @@ function TopicCard({ topic, index, isLarge, isFeatured }: {
       ref={cardRef}
       className={cn(
         "transition-all duration-300 ease-out h-full",
-        isFeatured && "md:col-span-2 lg:col-span-2",
         isLarge && "md:row-span-2",
       )}
       style={{ transformStyle: 'preserve-3d' }}

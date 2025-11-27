@@ -188,124 +188,103 @@ function SpeakerCard({ speaker, index, isExpanded, onToggle }: {
     >
       <Card
         className={cn(
-          "glass-strong overflow-hidden group cursor-pointer relative",
-          "border-border/50 hover:border-primary/30 transition-all duration-500",
+          "overflow-hidden group cursor-pointer relative h-full",
+          "bg-card/60 backdrop-blur-xl border-border/30",
+          "hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500",
           isExpanded && "ring-2 ring-primary/50"
         )}
         onClick={onToggle}
       >
-        {/* Subtle glow effect on hover */}
-        <div className={cn(
-          "absolute -inset-1 rounded-xl transition-opacity duration-500 blur-xl -z-10 opacity-0 group-hover:opacity-30",
-          `bg-gradient-to-br ${speaker.gradient}`
-        )} />
-
-        <CardContent className="p-0">
-          {/* Top section with photo */}
-          <div className="relative">
-            {/* Background pattern - reduced height */}
+        <CardContent className="p-5">
+          {/* Header with photo and day badge */}
+          <div className="flex items-start gap-4 mb-4">
+            {/* Photo */}
             <div className={cn(
-              "h-20 bg-gradient-to-br relative overflow-hidden",
-              speaker.gradient
+              "relative shrink-0 w-16 h-16 rounded-2xl p-0.5 shadow-lg",
+              `bg-gradient-to-br ${speaker.gradient}`
             )}>
-              {/* Subtle pattern */}
-              <div className="absolute inset-0 opacity-30">
-                <div className="absolute top-1 right-4 w-12 h-12 rounded-full bg-white/20 blur-lg" />
-                <div className="absolute bottom-1 left-8 w-8 h-8 rounded-full bg-white/10 blur-md" />
+              <div className="w-full h-full rounded-2xl overflow-hidden bg-background flex items-center justify-center">
+                {speaker.image ? (
+                  <Image
+                    src={speaker.image}
+                    alt={speaker.name}
+                    width={64}
+                    height={64}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                ) : (
+                  <span className="text-lg font-black text-primary">
+                    {speaker.initials}
+                  </span>
+                )}
               </div>
-              
-              {/* Day badge */}
-              <div className="absolute top-2 left-2">
-                <Badge className="bg-white/25 backdrop-blur-sm text-white border-0 text-[10px] font-medium shadow-sm">
-                  <Calendar className="w-3 h-3 mr-1" />
-                  {language === "en" ? `Day ${speaker.day}` : `Jour ${speaker.day}`}
-                </Badge>
+              {/* Online indicator */}
+              <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-emerald-500 border-2 border-background flex items-center justify-center">
+                <span className="text-[8px] text-white">✓</span>
               </div>
             </div>
-            
-            {/* Photo overlapping */}
-            <div className="absolute -bottom-10 left-1/2 -translate-x-1/2">
-              <div className={cn(
-                "w-20 h-20 rounded-xl p-0.5 shadow-lg transition-transform duration-300",
-                `bg-gradient-to-br ${speaker.gradient}`,
-                "group-hover:scale-105"
+
+            {/* Name and role */}
+            <div className="flex-1 min-w-0">
+              <h3 className="text-base font-bold text-foreground mb-0.5 truncate group-hover:text-primary transition-colors">
+                {speaker.name}
+              </h3>
+              <p className={cn(
+                "text-sm font-medium mb-1 truncate",
+                `bg-gradient-to-r ${speaker.gradient} bg-clip-text text-transparent`
               )}>
-                <div className="w-full h-full rounded-xl overflow-hidden bg-background flex items-center justify-center">
-                  {speaker.image ? (
-                    <Image
-                      src={speaker.image}
-                      alt={speaker.name}
-                      width={80}
-                      height={80}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <span className="text-xl font-black text-primary">
-                      {speaker.initials}
-                    </span>
-                  )}
-                </div>
-              </div>
-              
-              {/* Confirmed badge */}
-              {speaker.confirmed && (
-                <div className="absolute -bottom-1 left-1/2 -translate-x-1/2">
-                  <Badge className="bg-emerald-500 text-white border-0 text-[9px] shadow-md px-1.5 py-0.5">
-                    ✓ {language === "en" ? "Confirmed" : "Confirmé"}
-                  </Badge>
-                </div>
-              )}
+                {language === "en" ? speaker.roleEn : speaker.roleFr}
+              </p>
+              <p className="text-xs text-muted-foreground truncate">{speaker.organization}</p>
             </div>
           </div>
 
-          {/* Info section */}
-          <div className="pt-14 pb-4 px-4 text-center">
-            <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
-              {speaker.name}
-            </h3>
-            <p className="text-sm font-semibold mb-1 text-primary">
-              {language === "en" ? speaker.roleEn : speaker.roleFr}
-            </p>
-            <p className="text-muted-foreground text-xs mb-3">{speaker.organization}</p>
-            
-            {/* Time info */}
-            <div className="flex items-center justify-center gap-1.5 text-[11px] text-muted-foreground mb-3">
-              <Clock className="w-3 h-3" />
-              <span>{dayNames[speaker.day]} • {speaker.time}</span>
-            </div>
-
-            {/* Expertise tags */}
-            <div className="flex flex-wrap justify-center gap-1">
-              {speaker.expertise.slice(0, 3).map((tag) => (
-                <Badge
-                  key={tag}
-                  variant="outline"
-                  className="bg-secondary/50 text-muted-foreground border-border/50 text-[9px] px-1.5 py-0.5"
-                >
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-
-            {/* Expanded content */}
-            <div className={cn(
-              "overflow-hidden transition-all duration-500",
-              isExpanded ? "max-h-32 opacity-100 mt-3" : "max-h-0 opacity-0"
+          {/* Day and Time */}
+          <div className="flex items-center gap-2 mb-4">
+            <Badge className={cn(
+              "text-[10px] border-0 text-white",
+              `bg-gradient-to-r ${speaker.gradient}`
             )}>
-              <div className="pt-3 border-t border-border/50">
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {language === "en" ? speaker.bioEn : speaker.bioFr}
-                </p>
-              </div>
-            </div>
+              <Calendar className="w-3 h-3 mr-1" />
+              {language === "en" ? `Day ${speaker.day}` : `Jour ${speaker.day}`}
+            </Badge>
+            <span className="text-xs text-muted-foreground flex items-center gap-1">
+              <Clock className="w-3 h-3" />
+              {speaker.time}
+            </span>
+          </div>
 
-            {/* Expand indicator */}
-            <div className="mt-2 flex justify-center">
-              <div className={cn(
-                "w-6 h-0.5 rounded-full bg-border/50 transition-all duration-300",
-                "group-hover:bg-primary/40 group-hover:w-10"
-              )} />
+          {/* Expertise tags */}
+          <div className="flex flex-wrap gap-1.5 mb-3">
+            {speaker.expertise.map((tag) => (
+              <Badge
+                key={tag}
+                variant="outline"
+                className="bg-secondary/30 text-muted-foreground border-border/50 text-[10px] px-2 py-0.5 hover:border-primary/30 transition-colors"
+              >
+                {tag}
+              </Badge>
+            ))}
+          </div>
+
+          {/* Expanded bio */}
+          <div className={cn(
+            "overflow-hidden transition-all duration-500",
+            isExpanded ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+          )}>
+            <div className="pt-3 border-t border-border/30">
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                {language === "en" ? speaker.bioEn : speaker.bioFr}
+              </p>
             </div>
+          </div>
+
+          {/* Expand hint line */}
+          <div className="flex justify-center mt-3">
+            <div className={cn(
+              "h-1 rounded-full transition-all duration-300",
+              isExpanded ? "w-12 bg-primary" : "w-8 bg-border/50 group-hover:w-12 group-hover:bg-primary/50"
+            )} />
           </div>
         </CardContent>
       </Card>
