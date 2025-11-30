@@ -24,7 +24,7 @@ const speakerImages: Record<string, { image: string | null; initials?: string }>
   "Nabil Ayoub": { image: "/speakrs/nabil.png" },
   "Anas Bennis": { image: "/speakrs/bennis.jpeg" },
   "Zakaria Oulad": { image: "/speakrs/zakaria-oulad.png" },
-  "Pr El Mehdi Cherrat": { image: null, initials: "EC" },
+  "Pr El Mehdi Cherrat": { image: "/speakrs/Cherrat.png" },
   "Pr Aimad Karkouch": { image: null, initials: "AK" },
   "Nabil Ayoub & Anas Bennis": { image: null, initials: "NA" },
 }
