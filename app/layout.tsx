@@ -78,8 +78,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#0f1729" },
-    { media: "(prefers-color-scheme: light)", color: "#0f1729" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -93,7 +93,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-smooth dark" suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script
@@ -105,8 +105,8 @@ export default function RootLayout({
               name: "Intelligent Systems Autumn School 2025 (ISAS'25)",
               description:
                 "From Sensor to Dashboard: Building Integrated Solutions for Smart Cities and Industry. Five intensive days of hands-on learning, specialized workshops, and large-scale technical challenges.",
-              startDate: "2025-12-09",
-              endDate: "2025-12-13",
+              startDate: "2025-12-08",
+              endDate: "2025-12-12",
               eventStatus: "https://schema.org/EventScheduled",
               eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
               location: {
@@ -140,7 +140,7 @@ export default function RootLayout({
         </a>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
