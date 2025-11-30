@@ -41,11 +41,11 @@ const scheduleData = [
     emoji: "🚀", gradient: "from-blue-500 via-blue-600 to-cyan-500", bgGlow: "bg-blue-500/20",
     events: [
       { time: "08:30 - 09:30", titleEn: "Registration", titleFr: "Inscription", type: "ceremony", location: "Hall", icon: "📝" },
-      { time: "09:30 - 10:00", titleEn: "Opening Speech", titleFr: "Discours d'ouverture", type: "ceremony", location: "Amphithéâtre", icon: "🎤" },
-      { time: "10:00 - 11:00", titleEn: "Building a Project from Scratch", titleFr: "Construire un projet de zéro", speaker: "Ismail Saddik", type: "keynote", location: "Amphithéâtre", icon: "💡" },
+      { time: "09:30 - 10:00", titleEn: "Opening Speech", titleFr: "Discours d'ouverture", type: "ceremony", location: "Salle de Conférence", icon: "🎤" },
+      { time: "10:00 - 11:00", titleEn: "Building a Project from Scratch", titleFr: "Construire un projet de zéro", speaker: "Ismail Saddik", type: "keynote", location: "Salle de Conférence", icon: "💡" },
       { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", location: "Hall", icon: "☕" },
-      { time: "11:15 - 12:45", titleEn: "Smart Systems Needs by Local Government & Private Sector", titleFr: "Besoins en systèmes intelligents - Agadir & Haliopole", type: "conference", location: "Amphithéâtre", icon: "🏛️" },
-      { time: "14:00 - 17:00", titleEn: "From Business Needs to Technical Solutions", titleFr: "Des besoins métiers aux solutions techniques", speaker: "Ismail Saddik", type: "workshop", location: "Salle TP", icon: "🔧" },
+      { time: "11:15 - 12:45", titleEn: "Smart Systems Needs by Local Government & Private Sector", titleFr: "Besoins en systèmes intelligents - Agadir & Haliopole", type: "conference", location: "Salle de Conférence", icon: "🏛️" },
+      { time: "14:00 - 17:00", titleEn: "From Business Needs to Technical Solutions", titleFr: "Des besoins métiers aux solutions techniques", speaker: "Ismail Saddik", type: "workshop", location: "Salle Polyvalente", icon: "🔧" },
     ],
   },
   {
@@ -53,10 +53,10 @@ const scheduleData = [
     theme: "AI & Industrial Solutions", themeFr: "IA & Solutions Industrielles",
     emoji: "🤖", gradient: "from-violet-500 via-purple-600 to-fuchsia-500", bgGlow: "bg-violet-500/20",
     events: [
-      { time: "10:00 - 11:00", titleEn: "Build AI Solutions", titleFr: "Construire des Solutions IA", speaker: "Pr El Mehdi Cherrat", type: "keynote", location: "Amphithéâtre", icon: "🧠" },
+      { time: "10:00 - 11:00", titleEn: "Build AI Solutions", titleFr: "Construire des Solutions IA", speaker: "Pr El Mehdi Cherrat", type: "keynote", location: "Salle de Conférence", icon: "🧠" },
       { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", location: "Hall", icon: "☕" },
-      { time: "11:15 - 12:45", titleEn: "Industrial Smart Solutions", titleFr: "Solutions Industrielles Intelligentes", speaker: "Mohamed El Habib Abaakil", type: "keynote", location: "Amphithéâtre", icon: "🏭" },
-      { time: "14:00 - 17:00", titleEn: "Co-Creating Smart Solutions", titleFr: "Co-création de solutions intelligentes", speaker: "Mohamed El Habib Abaakil", type: "workshop", location: "Salle TP", icon: "🤝" },
+      { time: "11:15 - 12:45", titleEn: "Industrial Smart Solutions", titleFr: "Solutions Industrielles Intelligentes", speaker: "Mohamed El Habib Abaakil", type: "keynote", location: "Salle de Conférence", icon: "🏭" },
+      { time: "14:00 - 17:00", titleEn: "Co-Creating Smart Solutions", titleFr: "Co-création de solutions intelligentes", speaker: "Mohamed El Habib Abaakil", type: "workshop", location: "Salle Polyvalente", icon: "🤝" },
     ],
   },
   {
@@ -64,10 +64,10 @@ const scheduleData = [
     theme: "ADAS & BIM/VR", themeFr: "ADAS & BIM/VR",
     emoji: "🚗", gradient: "from-emerald-500 via-green-600 to-teal-500", bgGlow: "bg-emerald-500/20",
     events: [
-      { time: "10:00 - 11:00", titleEn: "Engineering ADAS: A Gateway to Vehicle Autonomy", titleFr: "Ingénierie ADAS: Vers l'autonomie véhiculaire", speaker: "Zakaria El Khadiri", type: "keynote", location: "Amphithéâtre", icon: "🚙" },
+      { time: "10:00 - 11:00", titleEn: "Engineering ADAS: A Gateway to Vehicle Autonomy", titleFr: "Ingénierie ADAS: Vers l'autonomie véhiculaire", speaker: "Zakaria El Khadiri", type: "keynote", location: "Salle de Conférence", icon: "🚙" },
       { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", location: "Hall", icon: "☕" },
-      { time: "11:15 - 12:45", titleEn: "BIM & Virtual Reality", titleFr: "BIM & Réalité Virtuelle", speaker: "Ismail Khoubbaz", type: "keynote", location: "Amphithéâtre", icon: "🥽" },
-      { time: "14:00 - 17:00", titleEn: "BIM Design and VR Exploration", titleFr: "Conception BIM et exploration VR", speaker: "Ismail Khoubbaz", type: "workshop", location: "Salle TP", icon: "🎮" },
+      { time: "11:15 - 12:45", titleEn: "BIM & Virtual Reality", titleFr: "BIM & Réalité Virtuelle", speaker: "Ismail Khoubbaz", type: "keynote", location: "Salle de Conférence", icon: "🥽" },
+      { time: "14:00 - 17:00", titleEn: "BIM Design and VR Exploration", titleFr: "Conception BIM et exploration VR", speaker: "Ismail Khoubbaz", type: "workshop", location: "Salle Polyvalente", icon: "🎮" },
     ],
   },
   {
@@ -75,10 +75,10 @@ const scheduleData = [
     theme: "Agriculture & Data Pipeline", themeFr: "Agriculture & Pipeline de Données",
     emoji: "🌾", gradient: "from-orange-500 via-amber-600 to-yellow-500", bgGlow: "bg-orange-500/20",
     events: [
-      { time: "10:00 - 11:00", titleEn: "Robotic Precision Agriculture: Sensors, Drones & Innovations", titleFr: "Agriculture robotique: Capteurs, Drones & Innovations", speaker: "Pr Amine Saddik", type: "keynote", location: "Amphithéâtre", icon: "🌱" },
+      { time: "10:00 - 11:00", titleEn: "Robotic Precision Agriculture: Sensors, Drones & Innovations", titleFr: "Agriculture robotique: Capteurs, Drones & Innovations", speaker: "Pr Amine Saddik", type: "keynote", location: "Salle de Conférence", icon: "🌱" },
       { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", location: "Hall", icon: "☕" },
-      { time: "11:15 - 12:45", titleEn: "To Be Confirmed", titleFr: "À confirmer", type: "tba", location: "Amphithéâtre", icon: "📋" },
-      { time: "14:00 - 17:00", titleEn: "Building a Modern Open-Source Data Pipeline", titleFr: "Pipeline de données open-source moderne", speaker: "Nabil Ayoub & Anas Bennis", type: "workshop", location: "Salle TP", icon: "📊" },
+      { time: "11:15 - 12:45", titleEn: "To Be Confirmed", titleFr: "À confirmer", type: "tba", location: "Salle de Conférence", icon: "📋" },
+      { time: "14:00 - 17:00", titleEn: "Building a Modern Open-Source Data Pipeline", titleFr: "Pipeline de données open-source moderne", speaker: "Nabil Ayoub & Anas Bennis", type: "workshop", location: "Salle Polyvalente", icon: "📊" },
     ],
   },
   {
@@ -86,10 +86,11 @@ const scheduleData = [
     theme: "Hackathon & Closing", themeFr: "Hackathon & Clôture",
     emoji: "🏆", gradient: "from-rose-500 via-pink-600 to-red-500", bgGlow: "bg-rose-500/20",
     events: [
-      { time: "10:00 - 11:00", titleEn: "Keynote Session", titleFr: "Session Keynote", speaker: "Pr Aimad Karkouch", type: "keynote", location: "Amphithéâtre", icon: "🎯" },
+      { time: "10:00 - 11:00", titleEn: "Keynote Session", titleFr: "Session Keynote", speaker: "Pr Aimad Karkouch", type: "keynote", location: "Salle de Conférence", icon: "🎯" },
       { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", location: "Hall", icon: "☕" },
-      { time: "11:15 - 17:00", titleEn: "Systems Integration Hackathon: From Sensor to Dashboard", titleFr: "Hackathon: Du Capteur au Dashboard", speaker: "Zakaria Oulad", type: "hackathon", location: "Salle TP", icon: "⚡" },
-      { time: "17:00 - 17:30", titleEn: "Closing Speech & Awards", titleFr: "Clôture & Remise des prix", type: "ceremony", location: "Amphithéâtre", icon: "🏅" },
+      { time: "11:15 - 12:45", titleEn: "Systems Integration Hackathon: From Sensor to Dashboard (Part 1)", titleFr: "Hackathon: Du Capteur au Dashboard (Partie 1)", speaker: "Zakaria Oulad", type: "hackathon", location: "Salle Polyvalente", icon: "⚡" },
+      { time: "14:00 - 17:00", titleEn: "Systems Integration Hackathon: From Sensor to Dashboard (Part 2)", titleFr: "Hackathon: Du Capteur au Dashboard (Partie 2)", speaker: "Zakaria Oulad", type: "hackathon", location: "Salle Polyvalente", icon: "⚡" },
+      { time: "17:00 - 17:30", titleEn: "Closing Speech & Awards", titleFr: "Clôture & Remise des prix", type: "ceremony", location: "Salle de Conférence", icon: "🏅" },
     ],
   },
 ]
