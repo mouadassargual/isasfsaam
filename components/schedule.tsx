@@ -44,7 +44,7 @@ const scheduleData = [
       { time: "09:30 - 10:00", titleEn: "Opening Speech", titleFr: "Discours d'ouverture", type: "ceremony", location: "Salle de Conférence", icon: "🎤" },
       { time: "10:00 - 11:00", titleEn: "Building a Project from Scratch", titleFr: "Construire un projet de zéro", speaker: "Ismail Saddik", type: "keynote", location: "Salle de Conférence", icon: "💡" },
       { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", location: "Hall", icon: "☕" },
-      { time: "11:15 - 12:45", titleEn: "Smart Systems Needs by Local Government & Private Sector", titleFr: "Besoins en systèmes intelligents - Agadir & Haliopole", type: "conference", location: "Salle de Conférence", icon: "🏛️" },
+      { time: "11:15 - 12:45", titleEn: "Smart Systems Needs by Local Government (Agadir City) & Private Sector (Haliopole)", titleFr: "Besoins en systèmes intelligents - Ville d'Agadir & Haliopole", type: "conference", location: "Salle de Conférence", icon: "🏛️" },
       { time: "14:00 - 17:00", titleEn: "From Business Needs to Technical Solutions", titleFr: "Des besoins métiers aux solutions techniques", speaker: "Ismail Saddik", type: "workshop", location: "Salle Polyvalente", icon: "🔧" },
     ],
   },
