@@ -23,7 +23,7 @@ const speakers = [
     image: "/speakrs/ismail.png",
     gradient: "from-primary to-orange-500",
     day: 1,
-    time: "10:00 - 11:00",
+    time: "10:00 - 17:00",
     confirmed: true,
   },
   {
@@ -54,7 +54,7 @@ const speakers = [
     image: "/speakrs/Mohamed-El-Habib-Abaakil.jpeg",
     gradient: "from-cyan to-blue-500",
     day: 2,
-    time: "11:15 - 12:45",
+    time: "11:15 - 17:00",
     confirmed: true,
   },
   {
@@ -85,7 +85,7 @@ const speakers = [
     image: "/speakrs/Ismail-Khoubbaz.jpeg",
     gradient: "from-teal-500 to-cyan-600",
     day: 3,
-    time: "11:15 - 12:45",
+    time: "11:15 - 17:00",
     confirmed: true,
   },
   {
@@ -162,21 +162,6 @@ const speakers = [
     gradient: "from-rose-500 to-pink-600",
     day: 5,
     time: "11:15 - 17:00",
-    confirmed: true,
-  },
-  {
-    id: "nabil-ayoub",
-    name: "Nabil Ayoub",
-    roleEn: "Open-Source Data Pipeline",
-    roleFr: "Pipeline de Données Open-Source",
-    organization: "AgriData",
-    bioEn: "Data engineer building modern open-source data pipelines for agricultural analytics.",
-    bioFr: "Ingénieur data construisant des pipelines de données open-source pour l'analytique agricole.",
-    expertise: ["Data Engineering", "Python", "Metabase"],
-    image: "/speakrs/nabil.png",
-    gradient: "from-blue-500 to-indigo-600",
-    day: 4,
-    time: "14:00 - 17:00",
     confirmed: true,
   },
 ]
