@@ -23,6 +23,9 @@ const speakerImages: Record<string, { image: string | null; initials?: string }>
   "Nabil Ayoub": { image: "/speakrs/nabil.png" },
   "Anas Bennis": { image: "/speakrs/bennis.jpeg" },
   "Zakaria Oulad": { image: "/speakrs/zakaria-oulad.png" },
+  "Pr El Mehdy Cherrat": { image: null, initials: "EC" },
+  "Pr Aimad Karkouch": { image: null, initials: "AK" },
+  "Nabil Ayoub & Anas Bennis": { image: null, initials: "NA" },
 }
 
 const getSpeakerInfo = (speakerName: string) => {
@@ -38,11 +41,12 @@ const scheduleData = [
     events: [
       { time: "08:30 - 09:30", titleEn: "Registration", titleFr: "Inscription", type: "ceremony", location: "Hall" },
       { time: "09:30 - 10:00", titleEn: "Opening Speech", titleFr: "Discours d'ouverture", type: "ceremony", location: "Salle des conférences" },
-      { time: "10:00 - 11:00", titleEn: "Building a project from scratch", titleFr: "Construire un projet de zéro", speaker: "Ismail Saddik", type: "keynote", location: "Salle des conférences" },
+      { time: "10:00 - 11:00", titleEn: "Building a Project from Scratch", titleFr: "Construire un projet de zéro", speaker: "Ismail Saddik", type: "keynote", location: "Salle des conférences" },
+      { time: "10:00 - 11:00", titleEn: "Keynote Session", titleFr: "Session Keynote", speaker: "Pr El Mehdy Cherrat", type: "keynote", location: "Salle des conférences" },
       { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", location: "Hall" },
-      { time: "11:15 - 12:45", titleEn: "Smart systems needs by Local government & Private sector", titleFr: "Besoins en systèmes intelligents", type: "conference", location: "Salle des conférences" },
+      { time: "11:15 - 12:45", titleEn: "Smart Systems Needs by Local Government & Private Sector", titleFr: "Besoins en systèmes intelligents par le gouvernement local et le secteur privé", type: "conference", location: "Salle des conférences" },
       { time: "12:45 - 14:00", titleEn: "Lunch", titleFr: "Déjeuner", type: "lunch", location: "Cafeteria" },
-      { time: "14:00 - 17:00", titleEn: "From business needs to technical solutions", titleFr: "Des besoins métiers aux solutions techniques", type: "workshop", location: "Salle Polyvalente" },
+      { time: "14:00 - 17:00", titleEn: "From Business Needs to Technical Solutions", titleFr: "Des besoins métiers aux solutions techniques", speaker: "Ismail Saddik", type: "workshop", location: "Salle Polyvalente" },
     ],
   },
   {
@@ -50,11 +54,11 @@ const scheduleData = [
     theme: "Industrial Smart Solutions", themeFr: "Solutions Industrielles Intelligentes",
     emoji: "🏭", color: "bg-violet-500", gradient: "from-violet-500 to-purple-600",
     events: [
-      { time: "10:00 - 11:00", titleEn: "Industrial Smart Solutions - Keynote", titleFr: "Solutions Industrielles - Keynote", speaker: "Mohamed El Habib Abaakil (PPRIME)", type: "keynote", location: "Salle des conférences" },
+      { time: "10:00 - 11:00", titleEn: "Morning Session", titleFr: "Session du matin", type: "conference", location: "Salle des conférences" },
       { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", location: "Hall" },
-      { time: "11:15 - 12:45", titleEn: "Industrial smart solutions", titleFr: "Solutions industrielles intelligentes", type: "conference", location: "Salle des conférences" },
+      { time: "11:15 - 12:45", titleEn: "Industrial Smart Solutions", titleFr: "Solutions Industrielles Intelligentes", speaker: "Mohamed El Habib Abaakil (PPRIME)", type: "keynote", location: "Salle des conférences" },
       { time: "12:45 - 14:00", titleEn: "Lunch", titleFr: "Déjeuner", type: "lunch", location: "Cafeteria" },
-      { time: "14:00 - 17:00", titleEn: "Co-creating smart solutions - Workshop", titleFr: "Co-création de solutions intelligentes", speaker: "Mohamed El Habib Abaakil", type: "workshop", location: "Salle Polyvalente" },
+      { time: "14:00 - 17:00", titleEn: "Co-Creating Smart Solutions", titleFr: "Co-création de solutions intelligentes", type: "workshop", location: "Salle Polyvalente" },
     ],
   },
   {
@@ -62,11 +66,11 @@ const scheduleData = [
     theme: "ADAS & BIM/VR", themeFr: "ADAS & BIM/VR",
     emoji: "🚗", color: "bg-emerald-500", gradient: "from-emerald-500 to-teal-500",
     events: [
-      { time: "10:00 - 11:00", titleEn: "Engineering ADAS: A Gateway to Vehicle Autonomy", titleFr: "Ingénierie ADAS: Autonomie véhiculaire", speaker: "Zakaria El Khadiri", type: "keynote", location: "Salle des conférences" },
+      { time: "10:00 - 11:00", titleEn: "Engineering ADAS: Vehicle Autonomy", titleFr: "Ingénierie ADAS: Autonomie véhiculaire", speaker: "Zakaria El Khadiri", type: "keynote", location: "Salle des conférences" },
       { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", location: "Hall" },
-      { time: "11:15 - 12:45", titleEn: "Building Information Modeling (BIM) & Virtual Reality", titleFr: "Modélisation BIM & Réalité Virtuelle", speaker: "Ismail Khoubbaz (BIM-R)", type: "keynote", location: "Salle des conférences" },
+      { time: "11:15 - 12:45", titleEn: "BIM & Virtual Reality", titleFr: "BIM & Réalité Virtuelle", speaker: "Ismail Khoubbaz (BIM-R)", type: "keynote", location: "Salle des conférences" },
       { time: "12:45 - 14:00", titleEn: "Lunch", titleFr: "Déjeuner", type: "lunch", location: "Cafeteria" },
-      { time: "14:00 - 17:00", titleEn: "BIM design and VR exploration", titleFr: "Conception BIM et exploration VR", speaker: "Ismail Khoubbaz", type: "workshop", location: "Salle Polyvalente" },
+      { time: "14:00 - 17:00", titleEn: "BIM Design & VR Exploration", titleFr: "Conception BIM et exploration VR", type: "workshop", location: "Salle Polyvalente" },
     ],
   },
   {
@@ -76,21 +80,21 @@ const scheduleData = [
     events: [
       { time: "10:00 - 11:00", titleEn: "Robotic Precision Agriculture", titleFr: "Agriculture de précision robotique", speaker: "Amine Saddik", type: "keynote", location: "Salle des conférences" },
       { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", location: "Hall" },
-      { time: "11:15 - 12:45", titleEn: "TBA", titleFr: "À confirmer", type: "tba", location: "Salle des conférences" },
+      { time: "11:15 - 12:45", titleEn: "Session", titleFr: "Session", type: "conference", location: "Salle des conférences" },
       { time: "12:45 - 14:00", titleEn: "Lunch", titleFr: "Déjeuner", type: "lunch", location: "Cafeteria" },
-      { time: "14:00 - 17:00", titleEn: "Building a modern open-source data pipeline", titleFr: "Pipeline de données open-source moderne", speaker: "Nabil Ayoub (AgriData)", type: "workshop", location: "Salle Polyvalente" },
+      { time: "14:00 - 17:00", titleEn: "Open-Source Data Pipeline", titleFr: "Pipeline de données open-source", speaker: "Nabil Ayoub & Anas Bennis", type: "workshop", location: "Salle Polyvalente" },
     ],
   },
   {
     day: 5, date: "12 Dec", dateEn: "Dec 12", dayNameFr: "Vendredi", dayNameEn: "Friday",
-    theme: "Data Agriculture & Hackathon", themeFr: "Agriculture Data & Hackathon",
+    theme: "Hackathon & Closing", themeFr: "Hackathon & Clôture",
     emoji: "🏆", color: "bg-rose-500", gradient: "from-rose-500 to-pink-600",
     events: [
-      { time: "10:00 - 11:00", titleEn: "Data-Driven Agriculture, real use cases!", titleFr: "Agriculture Data-Driven, cas réels!", speaker: "Anas Bennis (ENA Meknès)", type: "keynote", location: "Salle des conférences" },
+      { time: "10:00 - 11:00", titleEn: "Keynote Session", titleFr: "Session Keynote", speaker: "Pr Aimad Karkouch", type: "keynote", location: "Salle des conférences" },
       { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", location: "Hall" },
-      { time: "11:15 - 12:45", titleEn: "Systems Integration Hackathon", titleFr: "Hackathon Intégration Systèmes", speaker: "Zakaria Oulad (MOZA Partners)", type: "hackathon", location: "Salle des conférences" },
+      { time: "11:15 - 12:45", titleEn: "Systems Integration Hackathon: From Sensor to Dashboard", titleFr: "Hackathon: Du Capteur au Dashboard", speaker: "Zakaria Oulad (MOZA Partners)", type: "hackathon", location: "Salle des conférences" },
       { time: "12:45 - 14:00", titleEn: "Lunch", titleFr: "Déjeuner", type: "lunch", location: "Cafeteria" },
-      { time: "14:00 - 17:00", titleEn: "Systems Integration Hackathon (continued)", titleFr: "Hackathon (suite)", speaker: "Zakaria Oulad", type: "hackathon", location: "Salle Polyvalente" },
+      { time: "14:00 - 17:00", titleEn: "Systems Integration Hackathon: From Sensor to Dashboard", titleFr: "Hackathon: Du Capteur au Dashboard (suite)", speaker: "Zakaria Oulad", type: "hackathon", location: "Salle Polyvalente" },
       { time: "17:00 - 17:30", titleEn: "Closing Speech & Awards", titleFr: "Discours de clôture & Remise des prix", type: "ceremony", location: "Salle des conférences" },
     ],
   },
@@ -297,7 +301,7 @@ export function Schedule() {
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { icon: <CalendarDays className="w-6 h-6" />, value: "5", label: language === "en" ? "Days" : "Jours", gradient: "from-blue-500 to-cyan-500" },
-            { icon: <Mic2 className="w-6 h-6" />, value: "8", label: "Keynotes", gradient: "from-violet-500 to-purple-500" },
+            { icon: <Mic2 className="w-6 h-6" />, value: "10", label: "Keynotes", gradient: "from-violet-500 to-purple-500" },
             { icon: <Wrench className="w-6 h-6" />, value: "5", label: language === "en" ? "Workshops" : "Ateliers", gradient: "from-emerald-500 to-teal-500" },
             { icon: <Zap className="w-6 h-6" />, value: "1", label: "Hackathon", gradient: "from-rose-500 to-pink-500" },
           ].map((stat, i) => (
