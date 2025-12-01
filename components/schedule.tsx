@@ -262,134 +262,126 @@ export function Schedule() {
           </p>
         </div>
 
-        {/* Timeline */}
-        <div className="relative max-w-4xl mx-auto">
-          {/* Timeline Line */}
+        {/* Timeline - Horizontal */}
+        <div className="relative max-w-6xl mx-auto">
+          {/* Timeline Line - Horizontal */}
           <div className={cn(
-            "absolute left-8 md:left-1/2 top-0 bottom-0 w-1 rounded-full bg-gradient-to-b opacity-30",
+            "absolute left-0 right-0 top-[60px] h-1 rounded-full bg-gradient-to-r opacity-30",
             currentDay.gradient
           )} />
 
-          <div className="space-y-6">
-            {currentDay.events.map((event, eventIndex) => {
-              const isLive = mounted && isEventLive(selectedDay, event.time)
-              const config = typeConfig[event.type]
-              const isLeft = eventIndex % 2 === 0
+          <div className="overflow-x-auto pb-6 scrollbar-hide">
+            <div className="flex gap-4 min-w-max px-4">
+              {currentDay.events.map((event, eventIndex) => {
+                const isLive = mounted && isEventLive(selectedDay, event.time)
+                const config = typeConfig[event.type]
 
-              return (
-                <div
-                  key={eventIndex}
-                  className={cn(
-                    "relative flex items-start gap-4 md:gap-8",
-                    "md:flex-row",
-                    isLeft ? "md:flex-row" : "md:flex-row-reverse"
-                  )}
-                  onMouseEnter={() => setHoveredEvent(eventIndex)}
-                  onMouseLeave={() => setHoveredEvent(null)}
-                >
-                  {/* Timeline Node */}
-                  <div className={cn(
-                    "absolute left-8 md:left-1/2 -translate-x-1/2 z-10 transition-all duration-300",
-                    hoveredEvent === eventIndex ? "scale-125" : "scale-100"
-                  )}>
+                return (
+                  <div
+                    key={eventIndex}
+                    className="relative flex flex-col items-center"
+                    onMouseEnter={() => setHoveredEvent(eventIndex)}
+                    onMouseLeave={() => setHoveredEvent(null)}
+                  >
+                    {/* Timeline Node */}
                     <div className={cn(
-                      "w-10 h-10 rounded-xl flex items-center justify-center text-lg shadow-lg border-4 border-background transition-all duration-300",
-                      isLive 
-                        ? "bg-red-500 animate-pulse ring-4 ring-red-500/30" 
-                        : `bg-gradient-to-br ${config.gradient}`,
-                      hoveredEvent === eventIndex && "shadow-xl"
+                      "z-10 transition-all duration-300 mb-4",
+                      hoveredEvent === eventIndex ? "scale-125" : "scale-100"
                     )}>
-                      {event.icon}
+                      <div className={cn(
+                        "w-12 h-12 rounded-xl flex items-center justify-center text-xl shadow-lg border-4 border-background transition-all duration-300",
+                        isLive 
+                          ? "bg-red-500 animate-pulse ring-4 ring-red-500/30" 
+                          : `bg-gradient-to-br ${config.gradient}`,
+                        hoveredEvent === eventIndex && "shadow-xl"
+                      )}>
+                        {event.icon}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Content Card */}
-                  <div className={cn(
-                    "flex-1 ml-20 md:ml-0",
-                    isLeft ? "md:mr-[calc(50%+2rem)] md:text-right" : "md:ml-[calc(50%+2rem)]"
-                  )}>
+                    {/* Content Card */}
                     <Card className={cn(
-                      "overflow-hidden transition-all duration-500 group border-border/30",
+                      "w-[280px] overflow-hidden transition-all duration-500 group border-border/30",
                       "bg-card/80 backdrop-blur-xl hover:bg-card/90",
                       hoveredEvent === eventIndex && "shadow-2xl scale-[1.02] border-primary/30",
                       isLive && "ring-2 ring-red-500/50 bg-red-500/5"
                     )}>
-                      <CardContent className="p-5">
+                      <CardContent className="p-4">
                         {/* Time & Type */}
-                        <div className={cn(
-                          "flex items-center gap-3 mb-3 flex-wrap",
-                          isLeft ? "md:justify-end" : "md:justify-start"
-                        )}>
+                        <div className="flex items-center justify-between gap-2 mb-3">
                           <div className="flex items-center gap-2 text-sm font-bold text-foreground">
                             <Clock className="w-4 h-4 text-primary" />
                             {event.time}
                           </div>
                           {isLive && (
-                            <Badge className="bg-red-500 text-white border-0 animate-pulse">
+                            <Badge className="bg-red-500 text-white border-0 animate-pulse text-xs">
                               <Radio className="w-3 h-3 mr-1" />
                               LIVE
                             </Badge>
                           )}
-                          <Badge className={cn("border-0 text-white text-xs", `bg-gradient-to-r ${config.gradient}`)}>
-                            {config.icon}
-                            <span className="ml-1">{language === "en" ? config.label : config.labelFr}</span>
-                          </Badge>
                         </div>
 
+                        {/* Type Badge */}
+                        <Badge className={cn("border-0 text-white text-xs mb-3", `bg-gradient-to-r ${config.gradient}`)}>
+                          {config.icon}
+                          <span className="ml-1">{language === "en" ? config.label : config.labelFr}</span>
+                        </Badge>
+
                         {/* Title */}
-                        <h4 className={cn(
-                          "text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors leading-tight",
-                          isLeft ? "md:text-right" : "md:text-left"
-                        )}>
+                        <h4 className="text-base font-bold text-foreground mb-3 group-hover:text-primary transition-colors leading-tight line-clamp-2 min-h-[48px]">
                           {language === "en" ? event.titleEn : event.titleFr}
                         </h4>
 
-                        {/* Location & Speaker */}
-                        <div className={cn(
-                          "flex flex-wrap items-center gap-3",
-                          isLeft ? "md:justify-end" : "md:justify-start"
-                        )}>
-                          <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
-                            <MapPin className="w-3.5 h-3.5" />
-                            <span>{event.location}</span>
-                          </div>
-                          
-                          {event.speaker && (
-                            <button 
-                              onClick={(e) => { e.stopPropagation(); scrollToSpeaker() }}
-                              className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-primary/10 to-cyan/10 hover:from-primary/20 hover:to-cyan/20 transition-all border border-primary/20 group/speaker"
-                            >
-                              {(() => {
-                                const info = getSpeakerInfo(event.speaker)
-                                if (info?.image) {
-                                  return (
-                                    <div className="w-6 h-6 rounded-full overflow-hidden ring-2 ring-primary/30 group-hover/speaker:ring-primary/50 transition-all">
-                                      <Image src={info.image} alt={event.speaker} width={24} height={24} className="w-full h-full object-cover" />
-                                    </div>
-                                  )
-                                }
-                                if (info?.initials) {
-                                  return (
-                                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-cyan flex items-center justify-center">
-                                      <span className="text-[9px] font-bold text-white">{info.initials}</span>
-                                    </div>
-                                  )
-                                }
-                                return <User className="w-4 h-4 text-primary" />
-                              })()}
-                              <span className="text-xs font-semibold text-primary group-hover/speaker:underline">
-                                {event.speaker.split(" (")[0]}
-                              </span>
-                              <ChevronRight className="w-3 h-3 text-primary group-hover/speaker:translate-x-0.5 transition-transform" />
-                            </button>
-                          )}
+                        {/* Location */}
+                        <div className="flex items-center gap-1.5 text-sm text-muted-foreground mb-2">
+                          <MapPin className="w-3.5 h-3.5 shrink-0" />
+                          <span className="truncate">{event.location}</span>
                         </div>
+                        
+                        {/* Speaker */}
+                        {event.speaker && (
+                          <button 
+                            onClick={(e) => { e.stopPropagation(); scrollToSpeaker() }}
+                            className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-primary/10 to-cyan/10 hover:from-primary/20 hover:to-cyan/20 transition-all border border-primary/20 group/speaker w-full"
+                          >
+                            {(() => {
+                              const info = getSpeakerInfo(event.speaker)
+                              if (info?.image) {
+                                return (
+                                  <div className="w-6 h-6 rounded-full overflow-hidden ring-2 ring-primary/30 group-hover/speaker:ring-primary/50 transition-all shrink-0">
+                                    <Image src={info.image} alt={event.speaker} width={24} height={24} className="w-full h-full object-cover" />
+                                  </div>
+                                )
+                              }
+                              if (info?.initials) {
+                                return (
+                                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-cyan flex items-center justify-center shrink-0">
+                                    <span className="text-[9px] font-bold text-white">{info.initials}</span>
+                                  </div>
+                                )
+                              }
+                              return <User className="w-4 h-4 text-primary shrink-0" />
+                            })()}
+                            <span className="text-xs font-semibold text-primary group-hover/speaker:underline truncate">
+                              {event.speaker.split(" (")[0]}
+                            </span>
+                            <ChevronRight className="w-3 h-3 text-primary group-hover/speaker:translate-x-0.5 transition-transform ml-auto shrink-0" />
+                          </button>
+                        )}
                       </CardContent>
                     </Card>
                   </div>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
+          </div>
+          
+          {/* Scroll hint */}
+          <div className="flex justify-center mt-4 gap-2">
+            <span className="text-xs text-muted-foreground flex items-center gap-1">
+              <ChevronRight className="w-4 h-4 animate-pulse" />
+              {language === "en" ? "Scroll to see more" : "Défiler pour voir plus"}
+            </span>
           </div>
         </div>
 
