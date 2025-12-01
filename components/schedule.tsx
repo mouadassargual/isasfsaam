@@ -263,15 +263,16 @@ export function Schedule() {
         </div>
 
         {/* Timeline - Horizontal */}
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative w-full">
           {/* Timeline Line - Horizontal */}
           <div className={cn(
-            "absolute left-0 right-0 top-[60px] h-1 rounded-full bg-gradient-to-r opacity-30",
+            "absolute left-0 right-0 top-[30px] h-1 rounded-full bg-gradient-to-r opacity-30 hidden md:block",
             currentDay.gradient
           )} />
 
-          <div className="overflow-x-auto pb-6 scrollbar-hide">
-            <div className="flex gap-4 min-w-max px-4">
+          <div className="overflow-x-auto pb-6" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+            <style jsx>{`div::-webkit-scrollbar { display: none; }`}</style>
+            <div className="flex gap-4 md:gap-6 w-max px-2">
               {currentDay.events.map((event, eventIndex) => {
                 const isLive = mounted && isEventLive(selectedDay, event.time)
                 const config = typeConfig[event.type]
@@ -279,17 +280,17 @@ export function Schedule() {
                 return (
                   <div
                     key={eventIndex}
-                    className="relative flex flex-col items-center"
+                    className="relative flex flex-col items-center flex-shrink-0"
                     onMouseEnter={() => setHoveredEvent(eventIndex)}
                     onMouseLeave={() => setHoveredEvent(null)}
                   >
                     {/* Timeline Node */}
                     <div className={cn(
-                      "z-10 transition-all duration-300 mb-4",
-                      hoveredEvent === eventIndex ? "scale-125" : "scale-100"
+                      "z-10 transition-all duration-300 mb-3",
+                      hoveredEvent === eventIndex ? "scale-110" : "scale-100"
                     )}>
                       <div className={cn(
-                        "w-12 h-12 rounded-xl flex items-center justify-center text-xl shadow-lg border-4 border-background transition-all duration-300",
+                        "w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center text-lg md:text-xl shadow-lg border-4 border-background transition-all duration-300",
                         isLive 
                           ? "bg-red-500 animate-pulse ring-4 ring-red-500/30" 
                           : `bg-gradient-to-br ${config.gradient}`,
@@ -301,7 +302,7 @@ export function Schedule() {
 
                     {/* Content Card */}
                     <Card className={cn(
-                      "w-[280px] overflow-hidden transition-all duration-500 group border-border/30",
+                      "w-[260px] md:w-[280px] overflow-hidden transition-all duration-500 group border-border/30",
                       "bg-card/80 backdrop-blur-xl hover:bg-card/90",
                       hoveredEvent === eventIndex && "shadow-2xl scale-[1.02] border-primary/30",
                       isLive && "ring-2 ring-red-500/50 bg-red-500/5"
@@ -328,12 +329,12 @@ export function Schedule() {
                         </Badge>
 
                         {/* Title */}
-                        <h4 className="text-base font-bold text-foreground mb-3 group-hover:text-primary transition-colors leading-tight line-clamp-2 min-h-[48px]">
+                        <h4 className="text-sm md:text-base font-bold text-foreground mb-3 group-hover:text-primary transition-colors leading-tight line-clamp-2 min-h-[40px] md:min-h-[48px]">
                           {language === "en" ? event.titleEn : event.titleFr}
                         </h4>
 
                         {/* Location */}
-                        <div className="flex items-center gap-1.5 text-sm text-muted-foreground mb-2">
+                        <div className="flex items-center gap-1.5 text-xs md:text-sm text-muted-foreground mb-2">
                           <MapPin className="w-3.5 h-3.5 shrink-0" />
                           <span className="truncate">{event.location}</span>
                         </div>
@@ -377,10 +378,10 @@ export function Schedule() {
           </div>
           
           {/* Scroll hint */}
-          <div className="flex justify-center mt-4 gap-2">
+          <div className="flex justify-center mt-2 gap-2">
             <span className="text-xs text-muted-foreground flex items-center gap-1">
-              <ChevronRight className="w-4 h-4 animate-pulse" />
-              {language === "en" ? "Scroll to see more" : "Défiler pour voir plus"}
+              <span className="animate-pulse">👉</span>
+              {language === "en" ? "Swipe to see more" : "Glisser pour voir plus"}
             </span>
           </div>
         </div>
