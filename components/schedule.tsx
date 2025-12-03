@@ -26,7 +26,7 @@ const speakerImages: Record<string, { image: string | null; initials?: string }>
   "Zakaria Oulad": { image: "/speakrs/zakaria-oulad.png" },
   "Prof. El Mehdi Cherrat": { image: "/speakrs/Cherrat.png" },
   "Nabil Ayoub & Anas Bennis": { image: null, initials: "NA" },
-  "Rachid Belmouden": { image: null, initials: "RB" },
+  "Rachid Bouharroud": { image: null, initials: "RB" },
   "Abdellah Bourti": { image: "/speakrs/abdellah-bourti.jpg" },
   "Youssef El-Ouardi": { image: "/speakrs/Elouardi.jpeg" },
   "Zakaria Oulad & CNDP": { image: "/speakrs/zakaria-oulad.png" },
@@ -79,7 +79,7 @@ const scheduleData = [
     events: [
       { time: "10:00 - 11:00", titleEn: "Precision Agriculture: Robotics, Sensors, Drones & Innovations", titleFr: "Agriculture de précision : Robotique, Capteurs, Drones & Innovations", speaker: "Prof. Amine Saddik", type: "keynote", location: "Salle de Conférence", icon: "🌱" },
       { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", location: "Hall", icon: "☕" },
-      { time: "11:15 - 12:45", titleEn: "Precision Guidance for Optimal Crop Protection", titleFr: "Guidage de précision pour la protection optimale des cultures", speaker: "Rachid Belmouden", type: "keynote", location: "Salle de Conférence", icon: "🎯" },
+      { time: "11:15 - 12:45", titleEn: "Precision Guidance for Optimal Crop Protection", titleFr: "Guidage de précision pour la protection optimale des cultures", speaker: "Rachid Bouharroud", type: "keynote", location: "Salle de Conférence", icon: "🎯" },
       { time: "14:00 - 17:00", titleEn: "Workshop — Building a Modern Open-Source Data Pipeline", titleFr: "Atelier — Pipeline de données open-source moderne", speaker: "Nabil Ayoub & Anas Bennis", type: "workshop", location: "Salle Polyvalente", icon: "📊" },
     ],
   },

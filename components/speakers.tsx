@@ -117,8 +117,8 @@ const speakers = [
     confirmed: true,
   },
   {
-    id: "rachid-belmouden",
-    name: "Rachid Belmouden",
+    id: "rachid-bouharroud",
+    name: "Rachid Bouharroud",
     roleEn: "Precision Guidance for Crop Protection",
     roleFr: "Guidage de Précision pour la Protection des Cultures",
     organization: "Agricultural Expert",
