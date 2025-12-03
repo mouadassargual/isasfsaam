@@ -210,7 +210,7 @@ export const translations = {
         timeSub: "Lunch break included",
         location: "Location",
         locationValue: "Faculty of Applied Sciences",
-        locationSub: "Conference Hall & Multipurpose Room - Ait Melloul, Morocco",
+        locationSub: "Conference Room & Multipurpose Room - Ait Melloul, Morocco",
         contact: "Contact",
         price: "Price",
         priceValue: "Free",
