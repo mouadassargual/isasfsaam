@@ -17,7 +17,7 @@ import { GOOGLE_FORM_URL } from "@/lib/constants"
 const speakerImages: Record<string, { image: string | null; initials?: string }> = {
   "Ismail Saddik": { image: "/speakrs/ismail.png" },
   "Mohamed El Habib Abaakil": { image: "/speakrs/Mohamed-El-Habib-Abaakil.jpeg" },
-  "Zakaria El Khadiri": { image: null, initials: "ZK" },
+  "Zakaria El Khadiri": { image: "/speakrs/ZEK.png" },
   "Ismail Khoubbaz": { image: "/speakrs/Ismail-Khoubbaz.jpeg" },
   "Amine Saddik": { image: "/speakrs/amine.png" },
   "Prof. Amine Saddik": { image: "/speakrs/amine.png" },
