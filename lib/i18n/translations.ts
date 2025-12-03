@@ -17,7 +17,7 @@ export const translations = {
       description: "From Sensor to Dashboard: Building Integrated Solutions for",
       highlight1: "Smart Cities",
       highlight2: "Industry",
-      date: "December 8-12, 2025",
+      date: "December 8-13, 2025",
       location: "FSA - Ait Melloul",
       cta: "Register for free",
       ctaSecondary: "Discover the program",
@@ -45,7 +45,7 @@ export const translations = {
       features: {
         training: {
           title: "Hands-on Learning",
-          description: "Five intensive days of practical training with specialized workshops and real-world projects.",
+          description: "Six intensive days of practical training with specialized workshops and real-world projects.",
         },
         networking: {
           title: "Networking",
@@ -69,7 +69,7 @@ export const translations = {
       ctaBanner: {
         title: "From Sensor to Dashboard",
         description:
-          "Building Integrated Solutions for Smart Cities and Industry. Explore hands-on learning, specialized workshops, and large-scale technical challenges over five intensive days.",
+          "Building Integrated Solutions for Smart Cities and Industry. Explore hands-on learning, specialized workshops, and large-scale technical challenges over six intensive days.",
         cta: "See topics",
       },
     },
@@ -77,7 +77,7 @@ export const translations = {
     topics: {
       badge: "5 Topics",
       title: "Topics of Interest",
-      description: "Five exciting topics covering the most innovative areas of modern technology.",
+      description: "Six exciting topics covering the most innovative areas of modern technology.",
       items: {
         industrial: {
           title: "Industrial Smart Solutions",
@@ -109,9 +109,9 @@ export const translations = {
     // Schedule
     schedule: {
       badge: "Schedule",
-      title: "5 Days of Innovation",
+      title: "6 Days of Innovation",
       description: "A rich program combining conferences, hands-on workshops and a final hackathon.",
-      dayNames: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      dayNames: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
       types: {
         ceremony: "Ceremony",
         keynote: "Keynote",
@@ -203,8 +203,8 @@ export const translations = {
       info: {
         title: "Event Information",
         date: "Date",
-        dateValue: "December 8-12, 2025",
-        dateSub: "5 days of training",
+        dateValue: "December 8-13, 2025",
+        dateSub: "6 days of training",
         time: "Hours",
         timeValue: "08:30 - 17:30",
         timeSub: "Lunch break included",
@@ -263,7 +263,7 @@ export const translations = {
       description: "Du Capteur au Tableau de Bord : Construire des Solutions Intégrées pour les",
       highlight1: "Villes Intelligentes",
       highlight2: "l'Industrie",
-      date: "8 - 12 Décembre 2025",
+      date: "8 - 13 Décembre 2025",
       location: "FSA - Ait Melloul",
       cta: "S'inscrire gratuitement",
       ctaSecondary: "Découvrir le programme",
@@ -291,7 +291,7 @@ export const translations = {
       features: {
         training: {
           title: "Apprentissage Pratique",
-          description: "Cinq jours intensifs de formation pratique avec des ateliers spécialisés et des projets concrets.",
+          description: "Six jours intensifs de formation pratique avec des ateliers spécialisés et des projets concrets.",
         },
         networking: {
           title: "Networking",
@@ -315,7 +315,7 @@ export const translations = {
       ctaBanner: {
         title: "Du Capteur au Tableau de Bord",
         description:
-          "Construire des Solutions Intégrées pour les Villes Intelligentes et l'Industrie. Découvrez un apprentissage pratique, des ateliers spécialisés et des défis techniques à grande échelle pendant cinq jours intensifs.",
+          "Construire des Solutions Intégrées pour les Villes Intelligentes et l'Industrie. Découvrez un apprentissage pratique, des ateliers spécialisés et des défis techniques à grande échelle pendant six jours intensifs.",
         cta: "Voir les thématiques",
       },
     },
@@ -323,7 +323,7 @@ export const translations = {
     topics: {
       badge: "5 Thematiques",
       title: "Topics of Interest",
-      description: "Cinq thematiques passionnantes couvrant les domaines les plus innovants de la technologie moderne.",
+      description: "Six thematiques passionnantes couvrant les domaines les plus innovants de la technologie moderne.",
       items: {
         industrial: {
           title: "Industrial Smart Solutions",
@@ -356,9 +356,9 @@ export const translations = {
     // Schedule
     schedule: {
       badge: "Programme",
-      title: "5 Jours d'Innovation",
+      title: "6 Jours d'Innovation",
       description: "Un programme riche combinant conferences, ateliers pratiques et un hackathon final.",
-      dayNames: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"],
+      dayNames: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
       types: {
         ceremony: "Ceremonie",
         keynote: "Keynote",
@@ -451,8 +451,8 @@ export const translations = {
       info: {
         title: "Informations de l'evenement",
         date: "Date",
-        dateValue: "8 - 12 Decembre 2025",
-        dateSub: "5 jours de formation",
+        dateValue: "8 - 13 Decembre 2025",
+        dateSub: "6 jours de formation",
         time: "Horaires",
         timeValue: "08:30 - 17:30",
         timeSub: "Pause dejeuner incluse",

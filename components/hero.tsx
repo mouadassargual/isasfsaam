@@ -179,10 +179,10 @@ export function Hero() {
         {/* Quick Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-700 delay-[600ms]">
           {[
-            { value: "5", label: t.hero.stats.days, icon: BookOpen },
-            { value: "5+", label: t.hero.stats.topics, icon: Zap },
-            { value: "10+", label: t.hero.stats.experts, icon: Users },
-            { value: "1", label: t.hero.stats.hackathon, icon: Award },
+            { value: "6", label: t.hero.stats.days, icon: BookOpen },
+            { value: "6", label: t.hero.stats.topics, icon: Zap },
+            { value: "12+", label: t.hero.stats.experts, icon: Users },
+            { value: "6", label: t.hero.stats.hackathon, icon: Award },
           ].map((stat) => (
             <div
               key={stat.label}

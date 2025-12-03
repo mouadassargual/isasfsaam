@@ -16,7 +16,7 @@ import { useLanguage } from "@/lib/i18n/context"
 const whyAttendData = {
   en: {
     badge: "Why Attend?",
-    title: "Transform Your Career in 5 Days",
+    title: "Transform Your Career in 6 Days",
     subtitle: "Join hundreds of students, researchers, and professionals for an immersive learning experience",
     reasons: [
       {
@@ -56,7 +56,7 @@ const whyAttendData = {
   },
   fr: {
     badge: "Pourquoi Participer ?",
-    title: "Transformez Votre Carrière en 5 Jours",
+    title: "Transformez Votre Carrière en 6 Jours",
     subtitle: "Rejoignez des centaines d'étudiants, chercheurs et professionnels pour une expérience immersive",
     reasons: [
       {

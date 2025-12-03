@@ -59,8 +59,8 @@ export function About() {
 
   const stats = [
     { value: 200, suffix: "+", label: t.about.stats.participants },
-    { value: 5, suffix: "", label: t.about.stats.days },
-    { value: 10, suffix: "+", label: t.about.stats.workshops },
+    { value: 6, suffix: "", label: t.about.stats.days },
+    { value: 12, suffix: "+", label: t.about.stats.workshops },
     { value: 100, suffix: "%", label: t.about.stats.free },
   ]
 

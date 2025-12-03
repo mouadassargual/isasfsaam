@@ -149,11 +149,11 @@ export function Footer() {
             <h4 className="font-semibold text-foreground mb-4">{t.footer.event}</h4>
             <div className="p-5 rounded-xl bg-secondary/30 border border-border space-y-4">
               <div>
-                <p className="text-lg font-bold text-foreground">9 - 13 December</p>
+                <p className="text-lg font-bold text-foreground">8 - 13 December</p>
                 <p className="text-primary font-semibold">2025</p>
               </div>
               <div className="flex flex-wrap gap-2">
-                <span className="px-2 py-1 rounded-md bg-primary/10 text-primary text-xs font-medium">5 days</span>
+                <span className="px-2 py-1 rounded-md bg-primary/10 text-primary text-xs font-medium">6 days</span>
                 <span className="px-2 py-1 rounded-md bg-chart-4/10 text-chart-4 text-xs font-medium">Free</span>
               </div>
               <a

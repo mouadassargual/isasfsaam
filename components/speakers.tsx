@@ -23,18 +23,33 @@ const speakers = [
     image: "/speakrs/ismail.png",
     gradient: "from-primary to-orange-500",
     day: 1,
+    time: "11:30 - 12:30",
+    confirmed: true,
+  },
+  {
+    id: "zakaria-oulad",
+    name: "Zakaria Oulad",
+    roleEn: "Data-Based Solutions & Workshop",
+    roleFr: "Solutions Data & Atelier",
+    organization: "MOZA Partners",
+    bioEn: "Tech entrepreneur leading round table discussions and workshops on data-based solutions.",
+    bioFr: "Entrepreneur tech animant des tables rondes et ateliers sur les solutions basées sur les données.",
+    expertise: ["Data Solutions", "IoT", "Integration"],
+    image: "/speakrs/zakaria-oulad.png",
+    gradient: "from-rose-500 to-pink-600",
+    day: 1,
     time: "10:00 - 17:00",
     confirmed: true,
   },
   {
     id: "elmehdi-cherrat",
-    name: "Pr El Mehdi Cherrat",
-    roleEn: "Build AI Solutions",
-    roleFr: "Construire des Solutions IA",
+    name: "Prof. El Mehdi Cherrat",
+    roleEn: "Agri-AI: Digital Solutions for Agriculture",
+    roleFr: "Agri-IA : Solutions numériques pour l'agriculture",
     organization: "FSA Ait Melloul",
-    bioEn: "University Professor at the Faculty of Applied Sciences Ait Melloul, expert in Artificial Intelligence solutions.",
-    bioFr: "Professeur universitaire à la Faculté des Sciences Appliquées Ait Melloul, expert en solutions d'Intelligence Artificielle.",
-    expertise: ["AI", "Machine Learning", "Research"],
+    bioEn: "University Professor at the Faculty of Applied Sciences Ait Melloul, expert in AI-powered agricultural solutions.",
+    bioFr: "Professeur universitaire à la FSA Ait Melloul, expert en solutions agricoles basées sur l'IA.",
+    expertise: ["AI", "Agriculture", "Research"],
     image: "/speakrs/Cherrat.png",
     gradient: "from-indigo-500 to-violet-600",
     day: 2,
@@ -89,9 +104,9 @@ const speakers = [
   },
   {
     id: "amine-saddik",
-    name: "Pr Amine Saddik",
-    roleEn: "Robotic Precision Agriculture",
-    roleFr: "Agriculture de Précision Robotisée",
+    name: "Prof. Amine Saddik",
+    roleEn: "Precision Agriculture: Robotics & Drones",
+    roleFr: "Agriculture de Précision : Robotique & Drones",
     organization: "Professor",
     bioEn: "Professor specializing in robotic precision agriculture, sensors, drones, and agricultural innovations.",
     bioFr: "Professeur spécialisé en agriculture de précision robotique, capteurs, drones et innovations agricoles.",
@@ -100,6 +115,22 @@ const speakers = [
     gradient: "from-amber-500 to-orange-600",
     day: 4,
     time: "10:00 - 11:00",
+    confirmed: true,
+  },
+  {
+    id: "rachid-belmouden",
+    name: "Rachid Belmouden",
+    roleEn: "Precision Guidance for Crop Protection",
+    roleFr: "Guidage de Précision pour la Protection des Cultures",
+    organization: "Agricultural Expert",
+    bioEn: "Expert in precision guidance systems for optimal crop protection and agricultural efficiency.",
+    bioFr: "Expert en systèmes de guidage de précision pour la protection optimale des cultures.",
+    expertise: ["Precision Agriculture", "Crop Protection", "Guidance Systems"],
+    image: null,
+    initials: "RB",
+    gradient: "from-lime-500 to-green-600",
+    day: 4,
+    time: "11:15 - 12:45",
     confirmed: true,
   },
   {
@@ -133,34 +164,35 @@ const speakers = [
     confirmed: true,
   },
   {
-    id: "aimad-karkouch",
-    name: "Pr Aimad Karkouch",
-    roleEn: "Keynote Speaker (TBC)",
-    roleFr: "Conférencier Principal (À confirmer)",
-    organization: "FSA Ait Melloul",
-    bioEn: "University Professor at the Faculty of Applied Sciences Ait Melloul, expert in cutting-edge technologies.",
-    bioFr: "Professeur universitaire à la Faculté des Sciences Appliquées Ait Melloul, expert en technologies de pointe.",
-    expertise: ["Research", "IoT", "Innovation"],
+    id: "abdellah-bourti",
+    name: "Abdellah Bourti",
+    roleEn: "Business Model & Go-to-Market Strategies",
+    roleFr: "Business Model & Stratégies Go-to-Market",
+    organization: "Business Strategist",
+    bioEn: "Expert in business model strategies and go-to-market approaches for intelligent solutions and tech startups.",
+    bioFr: "Expert en stratégies business model et approches go-to-market pour les solutions intelligentes et startups tech.",
+    expertise: ["Business Model", "Go-to-Market", "Strategy"],
     image: null,
-    initials: "AK",
-    gradient: "from-sky-500 to-blue-600",
+    initials: "AB",
+    gradient: "from-rose-500 to-red-600",
     day: 5,
-    time: "10:00 - 11:00",
+    time: "10:00 - 17:00",
     confirmed: true,
   },
   {
-    id: "zakaria-oulad",
-    name: "Zakaria Oulad",
-    roleEn: "Systems Integration Hackathon",
-    roleFr: "Hackathon Intégration Systèmes",
-    organization: "MOZA Partners",
-    bioEn: "Tech entrepreneur leading the hackathon on systems integration from sensor to dashboard.",
-    bioFr: "Entrepreneur tech animant le hackathon sur l'intégration des systèmes du capteur au dashboard.",
-    expertise: ["Hackathon", "IoT", "Integration"],
-    image: "/speakrs/zakaria-oulad.png",
-    gradient: "from-rose-500 to-pink-600",
-    day: 5,
-    time: "11:15 - 17:00",
+    id: "youssef-elouardi",
+    name: "Youssef El-Ouardi",
+    roleEn: "Project Management & Go-to-Market",
+    roleFr: "Gestion de Projet & Go-to-Market",
+    organization: "Project Management Expert",
+    bioEn: "Expert in project management and go-to-market strategies for tech ventures.",
+    bioFr: "Expert en gestion de projet et stratégies go-to-market pour les projets tech.",
+    expertise: ["Project Management", "Strategy", "Tech"],
+    image: null,
+    initials: "YE",
+    gradient: "from-indigo-500 to-blue-600",
+    day: 6,
+    time: "10:00 - 13:00",
     confirmed: true,
   },
 ]
@@ -208,8 +240,8 @@ function SpeakerCard({ speaker, index, isExpanded, onToggle }: {
   useTilt(cardRef)
 
   const dayNames = language === "en" 
-    ? ["", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
-    : ["", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"]
+    ? ["", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    : ["", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"]
 
   return (
     <div
@@ -395,7 +427,7 @@ export function Speakers() {
           >
             {language === "en" ? "All Speakers" : "Tous les Speakers"}
           </Button>
-          {[1, 2, 3, 4, 5].map(day => (
+          {[1, 2, 3, 4, 5, 6].map(day => (
             <Button
               key={day}
               variant={activeFilter === day ? "default" : "outline"}
@@ -446,9 +478,9 @@ export function Speakers() {
         {/* Stats bar */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { value: "10", label: language === "en" ? "Expert Speakers" : "Speakers Experts", icon: "🎤" },
-            { value: "5", label: language === "en" ? "Days of Learning" : "Jours d'Apprentissage", icon: "📅" },
-            { value: "15+", label: language === "en" ? "Hours of Content" : "Heures de Contenu", icon: "⏱️" },
+            { value: "12", label: language === "en" ? "Expert Speakers" : "Speakers Experts", icon: "🎤" },
+            { value: "6", label: language === "en" ? "Days of Learning" : "Jours d'Apprentissage", icon: "📅" },
+            { value: "20+", label: language === "en" ? "Hours of Content" : "Heures de Contenu", icon: "⏱️" },
             { value: "100%", label: language === "en" ? "Free Access" : "Accès Gratuit", icon: "🎁" },
           ].map((stat, i) => (
             <div 

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://isas2025.vercel.app'),
   title: "ISAS'25 | Intelligent Systems Autumn School - From Sensor to Dashboard",
   description:
-    "From Sensor to Dashboard: Building Integrated Solutions for Smart Cities and Industry. ISAS'25 - First Edition, December 9-13, 2025 at FSA Ait Melloul. Free registration for students, researchers, and professionals.",
+    "From Sensor to Dashboard: Building Integrated Solutions for Smart Cities and Industry. ISAS'25 - First Edition, December 8-13, 2025 at FSA Ait Melloul. Free registration for students, researchers, and professionals.",
   keywords: [
     "ISAS 2025",
     "Intelligent Systems Autumn School",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ISAS'25 | From Sensor to Dashboard - Smart Cities & Industry",
     description:
-      "First Edition: 5 days of hands-on learning, workshops, and technical challenges. December 9-13, 2025, FSA Ait Melloul. Free registration!",
+      "First Edition: 6 days of hands-on learning, workshops, and technical challenges. December 8-13, 2025, FSA Ait Melloul. Free registration!",
     type: "website",
     locale: "fr_FR",
     siteName: "ISAS 2025",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "ISAS 2025 | Intelligent Systems Autumn School",
-    description: "Formation gratuite en IA, IoT, VR et Hackathon. 8-12 Décembre 2025. Inscription gratuite !",
+    description: "Formation gratuite en IA, IoT, VR et Business Model. 8-13 Décembre 2025. Inscription gratuite !",
     creator: "@isas2025",
   },
   alternates: {
@@ -104,9 +104,9 @@ export default function RootLayout({
               "@type": "Event",
               name: "Intelligent Systems Autumn School 2025 (ISAS'25)",
               description:
-                "From Sensor to Dashboard: Building Integrated Solutions for Smart Cities and Industry. Five intensive days of hands-on learning, specialized workshops, and large-scale technical challenges.",
+                "From Sensor to Dashboard: Building Integrated Solutions for Smart Cities and Industry. Six intensive days of hands-on learning, specialized workshops, and large-scale technical challenges.",
               startDate: "2025-12-08",
-              endDate: "2025-12-12",
+              endDate: "2025-12-13",
               eventStatus: "https://schema.org/EventScheduled",
               eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
               location: {

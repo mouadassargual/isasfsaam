@@ -20,13 +20,16 @@ const speakerImages: Record<string, { image: string | null; initials?: string }>
   "Zakaria El Khadiri": { image: null, initials: "ZK" },
   "Ismail Khoubbaz": { image: "/speakrs/Ismail-Khoubbaz.jpeg" },
   "Amine Saddik": { image: "/speakrs/amine.png" },
-  "Pr Amine Saddik": { image: "/speakrs/amine.png" },
+  "Prof. Amine Saddik": { image: "/speakrs/amine.png" },
   "Nabil Ayoub": { image: "/speakrs/nabil.png" },
   "Anas Bennis": { image: "/speakrs/bennis.jpeg" },
   "Zakaria Oulad": { image: "/speakrs/zakaria-oulad.png" },
-  "Pr El Mehdi Cherrat": { image: "/speakrs/Cherrat.png" },
-  "Pr Aimad Karkouch": { image: null, initials: "AK" },
+  "Prof. El Mehdi Cherrat": { image: "/speakrs/Cherrat.png" },
   "Nabil Ayoub & Anas Bennis": { image: null, initials: "NA" },
+  "Rachid Belmouden": { image: null, initials: "RB" },
+  "Abdellah Bourti": { image: null, initials: "AB" },
+  "Youssef El-Ouardi": { image: null, initials: "YE" },
+  "Zakaria Oulad & CNDP": { image: "/speakrs/zakaria-oulad.png" },
 }
 
 const getSpeakerInfo = (speakerName: string) => {
@@ -37,26 +40,25 @@ const getSpeakerInfo = (speakerName: string) => {
 const scheduleData = [
   {
     day: 1, date: "8", month: "DEC", dayNameFr: "Lundi", dayNameEn: "Monday",
-    theme: "Opening & Project Building", themeFr: "Ouverture & Construction de Projet",
+    theme: "Opening & Data Solutions", themeFr: "Ouverture & Solutions Data",
     emoji: "🚀", gradient: "from-blue-500 via-blue-600 to-cyan-500", bgGlow: "bg-blue-500/20",
     events: [
-      { time: "08:30 - 09:30", titleEn: "Registration", titleFr: "Inscription", type: "ceremony", location: "Hall", icon: "📝" },
-      { time: "09:30 - 10:00", titleEn: "Opening Speech", titleFr: "Discours d'ouverture", type: "ceremony", location: "Salle de Conférence", icon: "🎤" },
-      { time: "10:00 - 11:00", titleEn: "Building a Project from Scratch", titleFr: "Construire un projet de zéro", speaker: "Ismail Saddik", type: "keynote", location: "Salle de Conférence", icon: "💡" },
-      { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", location: "Hall", icon: "☕" },
-      { time: "11:15 - 12:45", titleEn: "Smart Systems Needs by Local Government (Agadir City) & Private Sector (Haliopole)", titleFr: "Besoins en systèmes intelligents - Ville d'Agadir & Haliopole", type: "conference", location: "Salle de Conférence", icon: "🏛️" },
-      { time: "14:00 - 17:00", titleEn: "From Business Needs to Technical Solutions", titleFr: "Des besoins métiers aux solutions techniques", speaker: "Ismail Saddik", type: "workshop", location: "Salle Polyvalente", icon: "🔧" },
+      { time: "09:30 - 10:00", titleEn: "Opening Ceremony", titleFr: "Cérémonie d'ouverture", type: "ceremony", location: "Salle de Conférence", icon: "🎤" },
+      { time: "10:00 - 11:00", titleEn: "Round Table — Data-Based Solutions in Morocco: Opportunities & Challenges", titleFr: "Table Ronde — Solutions Data au Maroc : Opportunités & Défis", speaker: "Zakaria Oulad", type: "conference", location: "Salle de Conférence", icon: "🗣️" },
+      { time: "11:00 - 11:30", titleEn: "Coffee Break", titleFr: "Pause Café", type: "networking", location: "Hall", icon: "☕" },
+      { time: "11:30 - 12:30", titleEn: "Guest Talk — Building a Project from Scratch", titleFr: "Conférence — Construire un projet de zéro", speaker: "Ismail Saddik", type: "keynote", location: "Salle de Conférence", icon: "💡" },
+      { time: "14:00 - 17:00", titleEn: "Workshop — From Business Needs to Smart Solutions", titleFr: "Atelier — Des besoins métiers aux solutions intelligentes", speaker: "Zakaria Oulad & CNDP", type: "workshop", location: "Salle Polyvalente", icon: "🔧" },
     ],
   },
   {
     day: 2, date: "9", month: "DEC", dayNameFr: "Mardi", dayNameEn: "Tuesday",
-    theme: "AI & Industrial Solutions", themeFr: "IA & Solutions Industrielles",
+    theme: "Agri-AI & Industrial Solutions", themeFr: "Agri-IA & Solutions Industrielles",
     emoji: "🤖", gradient: "from-violet-500 via-purple-600 to-fuchsia-500", bgGlow: "bg-violet-500/20",
     events: [
-      { time: "10:00 - 11:00", titleEn: "Build AI Solutions", titleFr: "Construire des Solutions IA", speaker: "Pr El Mehdi Cherrat", type: "keynote", location: "Salle de Conférence", icon: "🧠" },
+      { time: "10:00 - 11:00", titleEn: "Agri-AI: Digital Solutions for Agriculture", titleFr: "Agri-IA : Solutions numériques pour l'agriculture", speaker: "Prof. El Mehdi Cherrat", type: "keynote", location: "Salle de Conférence", icon: "🌿" },
       { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", location: "Hall", icon: "☕" },
       { time: "11:15 - 12:45", titleEn: "Industrial Smart Solutions", titleFr: "Solutions Industrielles Intelligentes", speaker: "Mohamed El Habib Abaakil", type: "keynote", location: "Salle de Conférence", icon: "🏭" },
-      { time: "14:00 - 17:00", titleEn: "Co-Creating Smart Solutions", titleFr: "Co-création de solutions intelligentes", speaker: "Mohamed El Habib Abaakil", type: "workshop", location: "Salle Polyvalente", icon: "🤝" },
+      { time: "14:00 - 17:00", titleEn: "Workshop — Co-Creating Smart Solutions", titleFr: "Atelier — Co-création de solutions intelligentes", speaker: "Mohamed El Habib Abaakil", type: "workshop", location: "Salle Polyvalente", icon: "🤝" },
     ],
   },
   {
@@ -64,33 +66,39 @@ const scheduleData = [
     theme: "ADAS & BIM/VR", themeFr: "ADAS & BIM/VR",
     emoji: "🚗", gradient: "from-emerald-500 via-green-600 to-teal-500", bgGlow: "bg-emerald-500/20",
     events: [
-      { time: "10:00 - 11:00", titleEn: "Engineering ADAS: A Gateway to Vehicle Autonomy", titleFr: "Ingénierie ADAS: Vers l'autonomie véhiculaire", speaker: "Zakaria El Khadiri", type: "keynote", location: "Salle de Conférence", icon: "🚙" },
+      { time: "10:00 - 11:00", titleEn: "Engineering ADAS: A Gateway to Vehicle Autonomy", titleFr: "Ingénierie ADAS : Vers l'autonomie véhiculaire", speaker: "Zakaria El Khadiri", type: "keynote", location: "Salle de Conférence", icon: "🚙" },
       { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", location: "Hall", icon: "☕" },
-      { time: "11:15 - 12:45", titleEn: "BIM & Virtual Reality", titleFr: "BIM & Réalité Virtuelle", speaker: "Ismail Khoubbaz", type: "keynote", location: "Salle de Conférence", icon: "🥽" },
-      { time: "14:00 - 17:00", titleEn: "BIM Design and VR Exploration", titleFr: "Conception BIM et exploration VR", speaker: "Ismail Khoubbaz", type: "workshop", location: "Salle Polyvalente", icon: "🎮" },
+      { time: "11:15 - 12:45", titleEn: "Building Information Modeling (BIM) & Virtual Reality", titleFr: "BIM & Réalité Virtuelle", speaker: "Ismail Khoubbaz", type: "keynote", location: "Salle de Conférence", icon: "🥽" },
+      { time: "14:00 - 17:00", titleEn: "Workshop — BIM Design and VR Exploration", titleFr: "Atelier — Conception BIM et exploration VR", speaker: "Ismail Khoubbaz", type: "workshop", location: "Salle Polyvalente", icon: "🎮" },
     ],
   },
   {
     day: 4, date: "11", month: "DEC", dayNameFr: "Jeudi", dayNameEn: "Thursday",
-    theme: "Agriculture & Data Pipeline", themeFr: "Agriculture & Pipeline de Données",
+    theme: "Precision Agriculture & Data", themeFr: "Agriculture de Précision & Data",
     emoji: "🌾", gradient: "from-orange-500 via-amber-600 to-yellow-500", bgGlow: "bg-orange-500/20",
     events: [
-      { time: "10:00 - 11:00", titleEn: "Robotic Precision Agriculture: Sensors, Drones & Innovations", titleFr: "Agriculture robotique: Capteurs, Drones & Innovations", speaker: "Pr Amine Saddik", type: "keynote", location: "Salle de Conférence", icon: "🌱" },
+      { time: "10:00 - 11:00", titleEn: "Precision Agriculture: Robotics, Sensors, Drones & Innovations", titleFr: "Agriculture de précision : Robotique, Capteurs, Drones & Innovations", speaker: "Prof. Amine Saddik", type: "keynote", location: "Salle de Conférence", icon: "🌱" },
       { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", location: "Hall", icon: "☕" },
-      { time: "11:15 - 12:45", titleEn: "To Be Confirmed", titleFr: "À confirmer", type: "tba", location: "Salle de Conférence", icon: "📋" },
-      { time: "14:00 - 17:00", titleEn: "Building a Modern Open-Source Data Pipeline", titleFr: "Pipeline de données open-source moderne", speaker: "Nabil Ayoub & Anas Bennis", type: "workshop", location: "Salle Polyvalente", icon: "📊" },
+      { time: "11:15 - 12:45", titleEn: "Precision Guidance for Optimal Crop Protection", titleFr: "Guidage de précision pour la protection optimale des cultures", speaker: "Rachid Belmouden", type: "keynote", location: "Salle de Conférence", icon: "🎯" },
+      { time: "14:00 - 17:00", titleEn: "Workshop — Building a Modern Open-Source Data Pipeline", titleFr: "Atelier — Pipeline de données open-source moderne", speaker: "Nabil Ayoub & Anas Bennis", type: "workshop", location: "Salle Polyvalente", icon: "📊" },
     ],
   },
   {
     day: 5, date: "12", month: "DEC", dayNameFr: "Vendredi", dayNameEn: "Friday",
-    theme: "Hackathon & Closing", themeFr: "Hackathon & Clôture",
-    emoji: "🏆", gradient: "from-rose-500 via-pink-600 to-red-500", bgGlow: "bg-rose-500/20",
+    theme: "Business Model & Strategy", themeFr: "Business Model & Stratégie",
+    emoji: "💼", gradient: "from-rose-500 via-pink-600 to-red-500", bgGlow: "bg-rose-500/20",
     events: [
-      { time: "10:00 - 11:00", titleEn: "Keynote Session", titleFr: "Session Keynote", speaker: "Pr Aimad Karkouch", type: "keynote", location: "Salle de Conférence", icon: "🎯" },
-      { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", location: "Hall", icon: "☕" },
-      { time: "11:15 - 12:45", titleEn: "Systems Integration Hackathon: From Sensor to Dashboard (Part 1)", titleFr: "Hackathon: Du Capteur au Dashboard (Partie 1)", speaker: "Zakaria Oulad", type: "hackathon", location: "Salle Polyvalente", icon: "⚡" },
-      { time: "14:00 - 17:00", titleEn: "Systems Integration Hackathon: From Sensor to Dashboard (Part 2)", titleFr: "Hackathon: Du Capteur au Dashboard (Partie 2)", speaker: "Zakaria Oulad", type: "hackathon", location: "Salle Polyvalente", icon: "⚡" },
-      { time: "17:00 - 17:30", titleEn: "Closing Speech & Awards", titleFr: "Clôture & Remise des prix", type: "ceremony", location: "Salle de Conférence", icon: "🏅" },
+      { time: "10:00 - 12:45", titleEn: "Business Model Strategies and Go-to-Market Approaches for Intelligent Solutions", titleFr: "Stratégies Business Model et Go-to-Market pour les solutions intelligentes", speaker: "Abdellah Bourti", type: "keynote", location: "Salle de Conférence", icon: "📈" },
+      { time: "14:00 - 17:00", titleEn: "Hands-On Workshop — Building Your Business Model and Launch Plan", titleFr: "Atelier Pratique — Construisez votre Business Model et Plan de Lancement", speaker: "Abdellah Bourti", type: "workshop", location: "Salle Polyvalente", icon: "🚀" },
+    ],
+  },
+  {
+    day: 6, date: "13", month: "DEC", dayNameFr: "Samedi", dayNameEn: "Saturday",
+    theme: "Project Management & Closing", themeFr: "Gestion de Projet & Clôture",
+    emoji: "🏆", gradient: "from-indigo-500 via-blue-600 to-cyan-500", bgGlow: "bg-indigo-500/20",
+    events: [
+      { time: "10:00 - 13:00", titleEn: "Project Management and Go-to-Market Strategy", titleFr: "Gestion de Projet et Stratégie Go-to-Market", speaker: "Youssef El-Ouardi", type: "keynote", location: "Salle de Conférence", icon: "📋" },
+      { time: "13:00 - 14:00", titleEn: "Closing Session & Certificates", titleFr: "Cérémonie de Clôture & Certificats", type: "ceremony", location: "Salle de Conférence", icon: "🏅" },
     ],
   },
 ]
@@ -386,13 +394,13 @@ export function Schedule() {
           </div>
         </div>
 
-        {/* Quick Stats */}
+{/* Quick Stats */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
           {[
-            { value: "5", label: language === "en" ? "Days" : "Jours", gradient: "from-blue-500 to-cyan-500", emoji: "📅" },
-            { value: "10", label: language === "en" ? "Sessions" : "Sessions", gradient: "from-violet-500 to-purple-500", emoji: "🎤" },
-            { value: "5", label: language === "en" ? "Workshops" : "Ateliers", gradient: "from-emerald-500 to-teal-500", emoji: "🔧" },
-            { value: "10", label: "Speakers", gradient: "from-rose-500 to-pink-500", emoji: "👨‍🏫" },
+            { value: "6", label: language === "en" ? "Days" : "Jours", gradient: "from-blue-500 to-cyan-500", emoji: "📅" },
+            { value: "12", label: language === "en" ? "Sessions" : "Sessions", gradient: "from-violet-500 to-purple-500", emoji: "🎙️" },
+            { value: "6", label: language === "en" ? "Workshops" : "Ateliers", gradient: "from-emerald-500 to-teal-500", emoji: "🔧" },
+            { value: "12", label: "Speakers", gradient: "from-rose-500 to-pink-500", emoji: "👨‍🏫" },
           ].map((stat, i) => (
             <Card key={i} className="bg-card/60 backdrop-blur-md border-border/50 overflow-hidden group hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-xl">
               <CardContent className="p-6 text-center relative">
