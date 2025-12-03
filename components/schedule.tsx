@@ -43,7 +43,7 @@ const scheduleData = [
     theme: "Opening & Data Solutions", themeFr: "Ouverture & Solutions Data",
     emoji: "🚀", gradient: "from-blue-500 via-blue-600 to-cyan-500", bgGlow: "bg-blue-500/20",
     events: [
-      { time: "09:30 - 10:00", titleEn: "Opening Ceremony", titleFr: "Cérémonie d'ouverture", type: "ceremony", location: "Salle de Conférence", icon: "🎤", openingSpeakers: ["Pr. President UIZ", "Pr. Dean FSA", "Pr. Omar Seghrouchni (CNDP)", "Pr. Aimad Karkouch (GISI)"] },
+      { time: "09:30 - 10:00", titleEn: "Opening Ceremony", titleFr: "Cérémonie d'ouverture", type: "ceremony", location: "Salle de Conférence", icon: "🎤", openingSpeakers: ["Prof. Nabil Hamina — President of Ibn Zohr University", "Prof. Ali Rachidi — Dean of FSA Ait Melloul", "Mr. Omar Seghrouchni — President of CNDP", "Vice-President of Agadir City Council", "Prof. Azeddine Dliou — Head of GISI Department", "Prof. Yasmine Lamari — Chair, ISAS'25 Organizing Committee"] },
       { time: "10:00 - 11:00", titleEn: "Round Table — Data Solutions in Morocco", titleFr: "Table Ronde — Solutions Data au Maroc", speaker: "Zakaria Oulad", type: "conference", location: "Salle de Conférence", icon: "🗣️" },
       { time: "11:00 - 11:30", titleEn: "Coffee Break", titleFr: "Pause Café", type: "networking", location: "Hall", icon: "☕" },
       { time: "11:30 - 12:30", titleEn: "Guest Talk — Building a Project from Scratch", titleFr: "Conférence — Construire un projet de zéro", speaker: "Ismail Saddik", type: "keynote", location: "Salle de Conférence", icon: "💡" },
