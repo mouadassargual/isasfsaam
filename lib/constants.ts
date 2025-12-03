@@ -7,11 +7,13 @@ export const SITE_URL = "https://isas2025.vercel.app"
 
 export const CONTACT_EMAIL = "isasautumnschool@gmail.com"
 
+export const CONTACT_PHONE = "0528241434"
+
 export const EVENT_DATES = {
-  start: "2025-12-09",
+  start: "2025-12-08",
   end: "2025-12-13",
-  displayFr: "9 - 13 Décembre 2025",
-  displayEn: "December 9-13, 2025",
+  displayFr: "8 - 13 Décembre 2025",
+  displayEn: "December 8-13, 2025",
 }
 
 export const LOCATION = {

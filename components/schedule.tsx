@@ -27,8 +27,8 @@ const speakerImages: Record<string, { image: string | null; initials?: string }>
   "Prof. El Mehdi Cherrat": { image: "/speakrs/Cherrat.png" },
   "Nabil Ayoub & Anas Bennis": { image: null, initials: "NA" },
   "Rachid Belmouden": { image: null, initials: "RB" },
-  "Abdellah Bourti": { image: null, initials: "AB" },
-  "Youssef El-Ouardi": { image: null, initials: "YE" },
+  "Abdellah Bourti": { image: "/speakrs/abdellah-bourti.jpg" },
+  "Youssef El-Ouardi": { image: "/speakrs/Elouardi.jpeg" },
   "Zakaria Oulad & CNDP": { image: "/speakrs/zakaria-oulad.png" },
 }
 
@@ -43,8 +43,8 @@ const scheduleData = [
     theme: "Opening & Data Solutions", themeFr: "Ouverture & Solutions Data",
     emoji: "🚀", gradient: "from-blue-500 via-blue-600 to-cyan-500", bgGlow: "bg-blue-500/20",
     events: [
-      { time: "09:30 - 10:00", titleEn: "Opening Ceremony", titleFr: "Cérémonie d'ouverture", type: "ceremony", location: "Salle de Conférence", icon: "🎤" },
-      { time: "10:00 - 11:00", titleEn: "Round Table — Data-Based Solutions in Morocco: Opportunities & Challenges", titleFr: "Table Ronde — Solutions Data au Maroc : Opportunités & Défis", speaker: "Zakaria Oulad", type: "conference", location: "Salle de Conférence", icon: "🗣️" },
+      { time: "09:30 - 10:00", titleEn: "Opening Ceremony", titleFr: "Cérémonie d'ouverture", type: "ceremony", location: "Salle de Conférence", icon: "🎤", openingSpeakers: ["Pr. President UIZ", "Pr. Dean FSA", "Pr. Omar Seghrouchni (CNDP)", "Pr. Aimad Karkouch (GISI)"] },
+      { time: "10:00 - 11:00", titleEn: "Round Table — Data Solutions in Morocco", titleFr: "Table Ronde — Solutions Data au Maroc", speaker: "Zakaria Oulad", type: "conference", location: "Salle de Conférence", icon: "🗣️" },
       { time: "11:00 - 11:30", titleEn: "Coffee Break", titleFr: "Pause Café", type: "networking", location: "Hall", icon: "☕" },
       { time: "11:30 - 12:30", titleEn: "Guest Talk — Building a Project from Scratch", titleFr: "Conférence — Construire un projet de zéro", speaker: "Ismail Saddik", type: "keynote", location: "Salle de Conférence", icon: "💡" },
       { time: "14:00 - 17:00", titleEn: "Workshop — From Business Needs to Smart Solutions", titleFr: "Atelier — Des besoins métiers aux solutions intelligentes", speaker: "Zakaria Oulad & CNDP", type: "workshop", location: "Salle Polyvalente", icon: "🔧" },
@@ -310,7 +310,7 @@ export function Schedule() {
 
                     {/* Content Card */}
                     <Card className={cn(
-                      "w-[260px] md:w-[280px] overflow-hidden transition-all duration-500 group border-border/30",
+                      "w-[280px] md:w-[320px] overflow-hidden transition-all duration-500 group border-border/30",
                       "bg-card/80 backdrop-blur-xl hover:bg-card/90",
                       hoveredEvent === eventIndex && "shadow-2xl scale-[1.02] border-primary/30",
                       isLive && "ring-2 ring-red-500/50 bg-red-500/5"
@@ -337,9 +337,24 @@ export function Schedule() {
                         </Badge>
 
                         {/* Title */}
-                        <h4 className="text-sm md:text-base font-bold text-foreground mb-3 group-hover:text-primary transition-colors leading-tight line-clamp-2 min-h-[40px] md:min-h-[48px]">
+                        <h4 className="text-sm md:text-base font-bold text-foreground mb-3 group-hover:text-primary transition-colors leading-snug min-h-[48px] md:min-h-[56px]" title={language === "en" ? event.titleEn : event.titleFr}>
                           {language === "en" ? event.titleEn : event.titleFr}
                         </h4>
+
+                        {/* Opening Speakers List */}
+                        {event.openingSpeakers && (
+                          <div className="mb-3 p-2 rounded-lg bg-primary/5 border border-primary/10">
+                            <p className="text-xs font-semibold text-primary mb-1.5">{language === "en" ? "Speakers:" : "Intervenants :"}</p>
+                            <ul className="space-y-1">
+                              {event.openingSpeakers.map((speaker: string, idx: number) => (
+                                <li key={idx} className="text-xs text-muted-foreground flex items-center gap-1.5">
+                                  <span className="w-1 h-1 rounded-full bg-primary/60" />
+                                  {speaker}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
 
                         {/* Location */}
                         <div className="flex items-center gap-1.5 text-xs md:text-sm text-muted-foreground mb-2">

@@ -16,9 +16,10 @@ import {
   Globe,
   AlertCircle,
   TrendingUp,
+  Phone,
 } from "lucide-react"
 import { useLanguage } from "@/lib/i18n/context"
-import { GOOGLE_FORM_URL, GOOGLE_MAPS_EMBED_URL, PARTICIPANTS } from "@/lib/constants"
+import { GOOGLE_FORM_URL, GOOGLE_MAPS_EMBED_URL, PARTICIPANTS, CONTACT_PHONE } from "@/lib/constants"
 import { Badge } from "@/components/ui/badge"
 
 export function Registration() {
@@ -174,6 +175,12 @@ export function Registration() {
                   >
                     isasautumnschool@gmail.com
                   </a>
+                  <div className="flex items-center gap-2 mt-3 pt-3 border-t border-border">
+                    <Phone className="w-4 h-4 text-primary" />
+                    <a href={`tel:${CONTACT_PHONE}`} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                      {CONTACT_PHONE}
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
 

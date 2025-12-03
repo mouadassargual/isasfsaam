@@ -135,12 +135,12 @@ export function Footer() {
                   Ait Melloul, Maroc
                 </span>
               </div>
-              <div className="flex items-center gap-3 text-sm">
-                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+              <a href="tel:0528241434" className="flex items-center gap-3 text-sm group">
+                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
                   <Phone className="w-4 h-4 text-primary" />
                 </div>
-                <span className="text-muted-foreground">+212 5XX XXX XXX</span>
-              </div>
+                <span className="text-muted-foreground group-hover:text-primary transition-colors">0528 24 14 34</span>
+              </a>
             </div>
           </div>
 
