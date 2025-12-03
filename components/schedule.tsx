@@ -43,11 +43,11 @@ const scheduleData = [
     theme: "Opening & Data Solutions", themeFr: "Ouverture & Solutions Data",
     emoji: "🚀", gradient: "from-blue-500 via-blue-600 to-cyan-500", bgGlow: "bg-blue-500/20",
     events: [
-      { time: "09:30 - 10:00", titleEn: "Opening Ceremony", titleFr: "Cérémonie d'ouverture", type: "ceremony", location: "Salle de Conférence", icon: "🎤", openingSpeakers: ["Prof. Nabil Hamina — President of Ibn Zohr University", "Prof. Ali Rachidi — Dean of FSA Ait Melloul", "Mr. Omar Seghrouchni — President of CNDP", "Vice-President of Agadir City Council", "Prof. Azeddine Dliou — Head of GISI Department", "Prof. Yasmine Lamari — Chair, ISAS'25 Organizing Committee"] },
-      { time: "10:00 - 11:00", titleEn: "Round Table — Data Solutions in Morocco", titleFr: "Table Ronde — Solutions Data au Maroc", speaker: "Zakaria Oulad", type: "conference", location: "Salle de Conférence", icon: "🗣️" },
-      { time: "11:00 - 11:30", titleEn: "Coffee Break", titleFr: "Pause Café", type: "networking", location: "Hall", icon: "☕" },
-      { time: "11:30 - 12:30", titleEn: "Guest Talk — Building a Project from Scratch", titleFr: "Conférence — Construire un projet de zéro", speaker: "Ismail Saddik", type: "keynote", location: "Salle de Conférence", icon: "💡" },
-      { time: "14:00 - 17:00", titleEn: "Workshop — From Business Needs to Smart Solutions", titleFr: "Atelier — Des besoins métiers aux solutions intelligentes", speaker: "Zakaria Oulad & CNDP", type: "workshop", location: "Salle Polyvalente", icon: "🔧" },
+      { time: "09:30 - 10:00", titleEn: "Opening Ceremony", titleFr: "Cérémonie d'ouverture", type: "ceremony", locationEn: "Conference Room", locationFr: "Salle de Conférence", icon: "🎤", openingSpeakers: ["Prof. Nabil Hamina — President of Ibn Zohr University", "Prof. Ali Rachidi — Dean of FSA Ait Melloul", "Mr. Omar Seghrouchni — President of CNDP", "Vice-President of Agadir City Council", "Prof. Azeddine Dliou — Head of GISI Department", "Prof. Yasmine Lamari — Chair, ISAS'25 Organizing Committee"] },
+      { time: "10:00 - 11:00", titleEn: "Round Table — Data Solutions in Morocco", titleFr: "Table Ronde — Solutions Data au Maroc", speaker: "Zakaria Oulad", type: "conference", locationEn: "Conference Room", locationFr: "Salle de Conférence", icon: "🗣️" },
+      { time: "11:00 - 11:30", titleEn: "Coffee Break", titleFr: "Pause Café", type: "networking", locationEn: "Hall", locationFr: "Hall", icon: "☕" },
+      { time: "11:30 - 12:30", titleEn: "Guest Talk — Building a Project from Scratch", titleFr: "Conférence — Construire un projet de zéro", speaker: "Ismail Saddik", type: "keynote", locationEn: "Conference Room", locationFr: "Salle de Conférence", icon: "💡" },
+      { time: "14:00 - 17:00", titleEn: "Workshop — From Business Needs to Smart Solutions", titleFr: "Atelier — Des besoins métiers aux solutions intelligentes", speaker: "Zakaria Oulad & CNDP", type: "workshop", locationEn: "Multipurpose Room", locationFr: "Salle Polyvalente", icon: "🔧" },
     ],
   },
   {
@@ -55,10 +55,10 @@ const scheduleData = [
     theme: "Agri-AI & Industrial Solutions", themeFr: "Agri-IA & Solutions Industrielles",
     emoji: "🤖", gradient: "from-violet-500 via-purple-600 to-fuchsia-500", bgGlow: "bg-violet-500/20",
     events: [
-      { time: "10:00 - 11:00", titleEn: "Agri-AI: Digital Solutions for Agriculture", titleFr: "Agri-IA : Solutions numériques pour l'agriculture", speaker: "Prof. El Mehdi Cherrat", type: "keynote", location: "Salle de Conférence", icon: "🌿" },
-      { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", location: "Hall", icon: "☕" },
-      { time: "11:15 - 12:45", titleEn: "Industrial Smart Solutions", titleFr: "Solutions Industrielles Intelligentes", speaker: "Mohamed El Habib Abaakil", type: "keynote", location: "Salle de Conférence", icon: "🏭" },
-      { time: "14:00 - 17:00", titleEn: "Workshop — Co-Creating Smart Solutions", titleFr: "Atelier — Co-création de solutions intelligentes", speaker: "Mohamed El Habib Abaakil", type: "workshop", location: "Salle Polyvalente", icon: "🤝" },
+      { time: "10:00 - 11:00", titleEn: "Agri-AI: Digital Solutions for Agriculture", titleFr: "Agri-IA : Solutions numériques pour l'agriculture", speaker: "Prof. El Mehdi Cherrat", type: "keynote", locationEn: "Conference Room", locationFr: "Salle de Conférence", icon: "🌿" },
+      { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", locationEn: "Hall", locationFr: "Hall", icon: "☕" },
+      { time: "11:15 - 12:45", titleEn: "Industrial Smart Solutions", titleFr: "Solutions Industrielles Intelligentes", speaker: "Mohamed El Habib Abaakil", type: "keynote", locationEn: "Conference Room", locationFr: "Salle de Conférence", icon: "🏭" },
+      { time: "14:00 - 17:00", titleEn: "Workshop — Co-Creating Smart Solutions", titleFr: "Atelier — Co-création de solutions intelligentes", speaker: "Mohamed El Habib Abaakil", type: "workshop", locationEn: "Multipurpose Room", locationFr: "Salle Polyvalente", icon: "🤝" },
     ],
   },
   {
@@ -66,10 +66,10 @@ const scheduleData = [
     theme: "ADAS & BIM/VR", themeFr: "ADAS & BIM/VR",
     emoji: "🚗", gradient: "from-emerald-500 via-green-600 to-teal-500", bgGlow: "bg-emerald-500/20",
     events: [
-      { time: "10:00 - 11:00", titleEn: "Engineering ADAS: A Gateway to Vehicle Autonomy", titleFr: "Ingénierie ADAS : Vers l'autonomie véhiculaire", speaker: "Zakaria El Khadiri", type: "keynote", location: "Salle de Conférence", icon: "🚙" },
-      { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", location: "Hall", icon: "☕" },
-      { time: "11:15 - 12:45", titleEn: "Building Information Modeling (BIM) & Virtual Reality", titleFr: "BIM & Réalité Virtuelle", speaker: "Ismail Khoubbaz", type: "keynote", location: "Salle de Conférence", icon: "🥽" },
-      { time: "14:00 - 17:00", titleEn: "Workshop — BIM Design and VR Exploration", titleFr: "Atelier — Conception BIM et exploration VR", speaker: "Ismail Khoubbaz", type: "workshop", location: "Salle Polyvalente", icon: "🎮" },
+      { time: "10:00 - 11:00", titleEn: "Engineering ADAS: A Gateway to Vehicle Autonomy", titleFr: "Ingénierie ADAS : Vers l'autonomie véhiculaire", speaker: "Zakaria El Khadiri", type: "keynote", locationEn: "Conference Room", locationFr: "Salle de Conférence", icon: "🚙" },
+      { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", locationEn: "Hall", locationFr: "Hall", icon: "☕" },
+      { time: "11:15 - 12:45", titleEn: "Building Information Modeling (BIM) & Virtual Reality", titleFr: "BIM & Réalité Virtuelle", speaker: "Ismail Khoubbaz", type: "keynote", locationEn: "Conference Room", locationFr: "Salle de Conférence", icon: "🥽" },
+      { time: "14:00 - 17:00", titleEn: "Workshop — BIM Design and VR Exploration", titleFr: "Atelier — Conception BIM et exploration VR", speaker: "Ismail Khoubbaz", type: "workshop", locationEn: "Multipurpose Room", locationFr: "Salle Polyvalente", icon: "🎮" },
     ],
   },
   {
@@ -77,10 +77,10 @@ const scheduleData = [
     theme: "Precision Agriculture & Data", themeFr: "Agriculture de Précision & Data",
     emoji: "🌾", gradient: "from-orange-500 via-amber-600 to-yellow-500", bgGlow: "bg-orange-500/20",
     events: [
-      { time: "10:00 - 11:00", titleEn: "Precision Agriculture: Robotics, Sensors, Drones & Innovations", titleFr: "Agriculture de précision : Robotique, Capteurs, Drones & Innovations", speaker: "Prof. Amine Saddik", type: "keynote", location: "Salle de Conférence", icon: "🌱" },
-      { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", location: "Hall", icon: "☕" },
-      { time: "11:15 - 12:45", titleEn: "Precision Guidance for Optimal Crop Protection", titleFr: "Guidage de précision pour la protection optimale des cultures", speaker: "Rachid Bouharroud", type: "keynote", location: "Salle de Conférence", icon: "🎯" },
-      { time: "14:00 - 17:00", titleEn: "Workshop — Building a Modern Open-Source Data Pipeline", titleFr: "Atelier — Pipeline de données open-source moderne", speaker: "Nabil Ayoub & Anas Bennis", type: "workshop", location: "Salle Polyvalente", icon: "📊" },
+      { time: "10:00 - 11:00", titleEn: "Precision Agriculture: Robotics, Sensors, Drones & Innovations", titleFr: "Agriculture de précision : Robotique, Capteurs, Drones & Innovations", speaker: "Prof. Amine Saddik", type: "keynote", locationEn: "Conference Room", locationFr: "Salle de Conférence", icon: "🌱" },
+      { time: "11:00 - 11:15", titleEn: "Break & Speed Networking", titleFr: "Pause & Speed Networking", type: "networking", locationEn: "Hall", locationFr: "Hall", icon: "☕" },
+      { time: "11:15 - 12:45", titleEn: "Precision Guidance for Optimal Crop Protection", titleFr: "Guidage de précision pour la protection optimale des cultures", speaker: "Rachid Bouharroud", type: "keynote", locationEn: "Conference Room", locationFr: "Salle de Conférence", icon: "🎯" },
+      { time: "14:00 - 17:00", titleEn: "Workshop — Building a Modern Open-Source Data Pipeline", titleFr: "Atelier — Pipeline de données open-source moderne", speaker: "Nabil Ayoub & Anas Bennis", type: "workshop", locationEn: "Multipurpose Room", locationFr: "Salle Polyvalente", icon: "📊" },
     ],
   },
   {
@@ -88,8 +88,8 @@ const scheduleData = [
     theme: "Business Model & Strategy", themeFr: "Business Model & Stratégie",
     emoji: "💼", gradient: "from-rose-500 via-pink-600 to-red-500", bgGlow: "bg-rose-500/20",
     events: [
-      { time: "10:00 - 12:45", titleEn: "Business Model Strategies and Go-to-Market Approaches for Intelligent Solutions", titleFr: "Stratégies Business Model et Go-to-Market pour les solutions intelligentes", speaker: "Abdellah Bourti", type: "keynote", location: "Salle de Conférence", icon: "📈" },
-      { time: "14:00 - 17:00", titleEn: "Hands-On Workshop — Building Your Business Model and Launch Plan", titleFr: "Atelier Pratique — Construisez votre Business Model et Plan de Lancement", speaker: "Abdellah Bourti", type: "workshop", location: "Salle Polyvalente", icon: "🚀" },
+      { time: "10:00 - 12:45", titleEn: "Business Model Strategies and Go-to-Market Approaches for Intelligent Solutions", titleFr: "Stratégies Business Model et Go-to-Market pour les solutions intelligentes", speaker: "Abdellah Bourti", type: "keynote", locationEn: "Conference Room", locationFr: "Salle de Conférence", icon: "📈" },
+      { time: "14:00 - 17:00", titleEn: "Hands-On Workshop — Building Your Business Model and Launch Plan", titleFr: "Atelier Pratique — Construisez votre Business Model et Plan de Lancement", speaker: "Abdellah Bourti", type: "workshop", locationEn: "Multipurpose Room", locationFr: "Salle Polyvalente", icon: "🚀" },
     ],
   },
   {
@@ -97,8 +97,8 @@ const scheduleData = [
     theme: "Project Management & Closing", themeFr: "Gestion de Projet & Clôture",
     emoji: "🏆", gradient: "from-indigo-500 via-blue-600 to-cyan-500", bgGlow: "bg-indigo-500/20",
     events: [
-      { time: "10:00 - 13:00", titleEn: "Project Management and Go-to-Market Strategy", titleFr: "Gestion de Projet et Stratégie Go-to-Market", speaker: "Youssef El-Ouardi", type: "keynote", location: "Salle de Conférence", icon: "📋" },
-      { time: "13:00 - 14:00", titleEn: "Closing Session & Certificates", titleFr: "Cérémonie de Clôture & Certificats", type: "ceremony", location: "Salle de Conférence", icon: "🏅" },
+      { time: "10:00 - 13:00", titleEn: "Project Management and Go-to-Market Strategy", titleFr: "Gestion de Projet et Stratégie Go-to-Market", speaker: "Youssef El-Ouardi", type: "keynote", locationEn: "Conference Room", locationFr: "Salle de Conférence", icon: "📋" },
+      { time: "13:00 - 14:00", titleEn: "Closing Session & Certificates", titleFr: "Cérémonie de Clôture & Certificats", type: "ceremony", locationEn: "Conference Room", locationFr: "Salle de Conférence", icon: "🏅" },
     ],
   },
 ]
@@ -359,7 +359,7 @@ export function Schedule() {
                         {/* Location */}
                         <div className="flex items-center gap-1.5 text-xs md:text-sm text-muted-foreground mb-2">
                           <MapPin className="w-3.5 h-3.5 shrink-0" />
-                          <span className="truncate">{event.location}</span>
+                          <span className="truncate">{language === "en" ? event.locationEn : event.locationFr}</span>
                         </div>
                         
                         {/* Speaker */}
