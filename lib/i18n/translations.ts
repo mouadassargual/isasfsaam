@@ -458,7 +458,7 @@ export const translations = {
         timeSub: "Pause déjeuner incluse",
         location: "Lieu",
         locationValue: "Faculté des Sciences Appliquées",
-        locationSub: "Salle des conférences & Salle polyvalente - Ait Melloul, Maroc",
+        locationSub: "Salle de conférence & Salle polyvalente - Ait Melloul, Maroc",
         contact: "Contact",
         price: "Prix",
         priceValue: "Gratuit",
