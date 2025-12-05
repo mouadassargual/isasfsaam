@@ -44,7 +44,7 @@ const scheduleData = [
     emoji: "🚀", gradient: "from-blue-500 via-blue-600 to-cyan-500", bgGlow: "bg-blue-500/20",
     events: [
       { time: "09:30 - 10:00", titleEn: "Opening Ceremony", titleFr: "Cérémonie d'ouverture", type: "ceremony", locationEn: "Conference Room", locationFr: "Salle de Conférence", icon: "🎤", openingSpeakers: ["Prof. Nabil Hamina — President of Ibn Zohr University", "Prof. Ali Rachidi — Dean of FSA Ait Melloul", "Mr. Omar Seghrouchni — President of CNDP", "Vice-President of Agadir City Council", "Prof. Azeddine Dliou — Head of GISI Department", "Prof. Yasmine Lamari — Chair, ISAS'25 Organizing Committee"] },
-      { time: "10:00 - 11:00", titleEn: "Round Table — Data Solutions in Morocco", titleFr: "Table Ronde — Solutions Data au Maroc", speaker: "Zakaria Oulad", type: "conference", locationEn: "Conference Room", locationFr: "Salle de Conférence", icon: "🗣️" },
+      { time: "10:00 - 11:00", titleEn: "Round Table — Data Solutions in Morocco", titleFr: "Table Ronde — Solutions Data au Maroc", speaker: "Zakaria Oulad", type: "conference", locationEn: "Conference Room", locationFr: "Salle de Conférence", icon: "🗣️", panelists: ["Mr. Omar Seghrouchni — President of CNDP", "Zakaria Oulad — Smart Systems Expert", "Representative of Agadir City Council", "Representative of Haliopôle Cluster"] },
       { time: "11:00 - 11:30", titleEn: "Coffee Break", titleFr: "Pause Café", type: "networking", locationEn: "Hall", locationFr: "Hall", icon: "☕" },
       { time: "11:30 - 12:30", titleEn: "Guest Talk — Building a Project from Scratch", titleFr: "Conférence — Construire un projet de zéro", speaker: "Ismail Saddik", type: "keynote", locationEn: "Conference Room", locationFr: "Salle de Conférence", icon: "💡" },
       { time: "14:00 - 17:00", titleEn: "Workshop — From Business Needs to Smart Solutions", titleFr: "Atelier — Des besoins métiers aux solutions intelligentes", speaker: "Zakaria Oulad & CNDP", type: "workshop", locationEn: "Multipurpose Room", locationFr: "Salle Polyvalente", icon: "🔧" },
@@ -350,6 +350,21 @@ export function Schedule() {
                                 <li key={idx} className="text-xs text-muted-foreground flex items-center gap-1.5">
                                   <span className="w-1 h-1 rounded-full bg-primary/60" />
                                   {speaker}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
+                        {/* Round Table Panelists */}
+                        {event.panelists && (
+                          <div className="mb-3 p-2 rounded-lg bg-blue-500/5 border border-blue-500/10">
+                            <p className="text-xs font-semibold text-blue-500 mb-1.5">{language === "en" ? "Panelists:" : "Panélistes :"}</p>
+                            <ul className="space-y-1">
+                              {event.panelists.map((panelist: string, idx: number) => (
+                                <li key={idx} className="text-xs text-muted-foreground flex items-center gap-1.5">
+                                  <span className="w-1 h-1 rounded-full bg-blue-500/60" />
+                                  {panelist}
                                 </li>
                               ))}
                             </ul>
